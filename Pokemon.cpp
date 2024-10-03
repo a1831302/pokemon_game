@@ -21,6 +21,7 @@ Pokemon::Pokemon(int new_PokemonID) {
             sig_attack = "Hydro Pump";
             strengths[0] = 1; // Fire
             strengths[1] = 0; // None
+            strengths[2] = 0; //None
             stringStrengths = "Fire";
             weaknesses[0] = 6; // Electric
             weaknesses[1] = 4; // Grass
