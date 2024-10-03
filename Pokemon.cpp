@@ -16,9 +16,9 @@ Pokemon::Pokemon(int new_PokemonID){
             HP = 200;
             attack = "Water Gun";
             sig_attack = "Hydro Pump";
-            strengths = [1,0,0]; //Fire 
+            strengths = {1, 0, 0}; //Fire 
             stringStrengths = "Fire";
-            weaknesses = [6,4]; //electric and grass
+            weaknesses[2] = {6, 4}; //electric and grass
             stringWeaknesses = "Electric, Grass";
             break;
         case 2:
@@ -26,9 +26,9 @@ Pokemon::Pokemon(int new_PokemonID){
             HP = 200;
             attack = "Vine Whip";
             sig_attack = "Solar Beam";
-            strengths = [2,3,0]; 
+            strengths = {2, 3, 0}; 
             stringStrengths = "Water, Ground";
-            weaknesses = [1,0]; 
+            weaknesses = {1, 0}; 
             stringWeaknesses = "Fire";
             break;
         case 3:
@@ -36,9 +36,9 @@ Pokemon::Pokemon(int new_PokemonID){
             HP = 200;
             attack = "Ember";
             sig_attack = "Flamethrower";
-            strengths = [4,0,0]; 
+            strengths = {4,0,0}; 
             stringStrengths = "Grass";
-            weaknesses = [3,2]; 
+            weaknesses = {3,2}; 
             stringWeaknesses = "Ground, Water";
             break;
         case 4:
@@ -46,9 +46,9 @@ Pokemon::Pokemon(int new_PokemonID){
             HP = 200;
             attack = "Thunder Shock";
             sig_attack = "Thunder";
-            strengths = [2,0,0]; 
+            strengths = {2,0,0}; 
             stringStrengths = "Water";
-            weaknesses = [3,0]; 
+            weaknesses = {3,0}; 
             stringWeaknesses = "Ground";
             break;
         case 5:
@@ -56,9 +56,9 @@ Pokemon::Pokemon(int new_PokemonID){
             HP = 400;
             attack = "Karate Chop";
             sig_attack = "Sesimic Toss";
-            strengths = [5,0,0]; 
+            strengths = {5,0,0}; 
             stringStrengths = "Normal";
-            weaknesses = [7,8]; 
+            weaknesses = {7,8}; 
             stringWeaknesses = "Psychic, Fairy";
             break;
         case 6:
@@ -66,9 +66,9 @@ Pokemon::Pokemon(int new_PokemonID){
             HP = 400;
             attack = "Tail Whip";
             sig_attack = "Super Fang";
-            strengths = [0,0,0]; 
+            strengths = {0,0,0}; 
             stringStrengths = "No Strengths";
-            weaknesses = [9,0]; 
+            weaknesses = {9,0}; 
             stringWeaknesses = "Fighting";
             break;
         case 7:
@@ -76,9 +76,9 @@ Pokemon::Pokemon(int new_PokemonID){
             HP = 220;
             attack = "Sand Attack";
             sig_attack = "Fury Swipes";
-            strengths = [6,1,0]; 
+            strengths = {6,1,0}; 
             stringStrengths = "Electric, Fire";
-            weaknesses = [2,4]; 
+            weaknesses = {2,4}; 
             stringWeaknesses = "Water, Grass";
             break;   
         case 8:  
@@ -86,9 +86,9 @@ Pokemon::Pokemon(int new_PokemonID){
             HP = 1000;
             attack = "Slam";
             sig_attack = "Dragon Rage";
-            strengths = [4,1,2]; 
+            strengths = {4,1,2}; 
             stringStrengths = "Grass, Fire, Water";
-            weaknesses = [7,8]; 
+            weaknesses = {7,8}; 
             stringWeaknesses = "No Weaknesses";
             break; 
         default:
@@ -96,9 +96,9 @@ Pokemon::Pokemon(int new_PokemonID){
             HP = 0;
             attack = "No Attack";
             sig_attack = "No Signature Attack";
-            strengths = [0,0,0];
+            strengths = {0,0,0};
             stringStrengths = "No Strengths";
-            weaknesses = [0,0];
+            weaknesses = {0,0};
             stringWeaknesses = "No Weaknesses";
             break;
     }
