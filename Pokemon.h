@@ -22,8 +22,10 @@ class Pokemon {
         Pokemon();
         Pokemon(int new_PokemonID);
 
-        get_Pokemon_info(int PokemonID);
+        void print_Pokemon_info(int PokemonID);
 
+        void set_Pokemon_HP(int new_HP);
+        int get_Pokemon_HP();
 
 
 };

@@ -95,6 +95,7 @@ Pokemon::Pokemon(int new_PokemonID){
             name = "No Name";
             HP = 0;
             attack = "No Attack";
+            sig_attack = "No Signature Attack";
             strengths = [0,0,0];
             stringStrengths = "No Strengths";
             weaknesses = [0,0];
@@ -119,10 +120,21 @@ string Pokemon::get_Pokemon_name(){
     return name;
 }
 
-void Pokemon::get_Pokemon_info(int PokemonID) {
+void Pokemon::set_Pokemon_HP(int new_HP){
+    HP = new_HP;
+    };
+
+int Pokemon::get_Pokemon_HP(){
+    return HP;
+};
+
+
+
+void Pokemon::print_Pokemon_info(int PokemonID) {
     cout << "Name: " << name << "\n";
     cout << "HP: " << HP << "\n";
-    cout << 
+    cout << "TypeMove: " << attack << "\n";
+    cout << "SignatureMove: " << sig_attack << "\n";
     cout << "Strengths: " << stringStrengths << "\n";
     cout << "Weaknesses: " << stringWeaknesses << "\n";
 
