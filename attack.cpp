@@ -9,7 +9,7 @@ using namespace std;
 
 Attack::Attack() : num_hits(0){}
 
-Attack::Attack(int attack_used): num_hits(num_hits){
+Attack::Attack(int attack_used){
     // Initialize a random number engine
     std::random_device dev;  // Seed generator (for true random seed)
     std::mt19937 rng(dev()); // Mersenne Twister random number engine
@@ -19,6 +19,7 @@ Attack::Attack(int attack_used): num_hits(num_hits){
 
     // Generate a random number
     int chance = dist(rng);
+    get_numHits();
 
     // quick attack
     if (attack_used == 1){
@@ -66,6 +67,8 @@ Attack::Attack(int attack_used): num_hits(num_hits){
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input.  Try again: ";
     }
+
+    set_numHits(num_hits);
 }
 
 
@@ -77,3 +80,5 @@ int Attack::set_numHits(int num_hits){
 int Attack::get_numHits(){
     return num_hits;
 }
+
+//int Attack::HP_drain(int damage){}
