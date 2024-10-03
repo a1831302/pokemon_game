@@ -10,23 +10,15 @@
 class Attack : public Pokemon{
 public:
 
-    int sig_damage;
-    int type_damage;
-    int quick_damage;
+    int attack_used;
+    int damage;
+    int attack_type;
 
     int num_hits;
-
-    bool hit_success;
 
     //constructor
     Attack();
     Attack(int attack_used);
-
-    bool get_success();
-
-    int get_attack();
-
-    int get_attackType();
 
     int set_numHits(int num_hits);
     int get_numHits();

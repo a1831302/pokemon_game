@@ -11,6 +11,7 @@ class Pokemon {
     public:
         int PokemonID;
         string name;
+        int pokemon_type;
         int HP;
         string attack;
         string sig_attack;

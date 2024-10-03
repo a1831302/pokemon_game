@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// strengths: Fire = 1, Water = 2, Ground = 3, Grass = 4, Normal = 5, Electric = 6, Psychic = 7, Fairy = 8, Fighting = 9
+// strengths: Fire = 1, Water = 2, Ground = 3, Grass = 4, Normal = 5, Electric = 6, Psychic = 7, Fairy = 8, Fighting = 9, Dragon = 10
 
 // constructor
 Pokemon::Pokemon(int new_PokemonID) {
@@ -17,6 +17,7 @@ Pokemon::Pokemon(int new_PokemonID) {
         case 1:
             name = "Squirtle";
             HP = 200;
+            pokemon_type = 2;
             attack = "Water Gun";
             sig_attack = "Hydro Pump";
             strengths[0] = 1; // Fire
@@ -30,6 +31,7 @@ Pokemon::Pokemon(int new_PokemonID) {
         case 2:
             name = "Bulbasaur";
             HP = 200;
+            pokemon_type = 4;
             attack = "Vine Whip";
             sig_attack = "Solar Beam";
             strengths[0] = 2; // Water
@@ -44,6 +46,7 @@ Pokemon::Pokemon(int new_PokemonID) {
             name = "Charmander";
             HP = 200;
             attack = "Ember";
+            pokemon_type = 1;
             sig_attack = "Flamethrower";
             strengths[0] = 4; // Grass
             strengths[1] = 0; // None
@@ -56,6 +59,7 @@ Pokemon::Pokemon(int new_PokemonID) {
         case 4:
             name = "Pikachu";
             HP = 200;
+            pokemon_type = 6;
             attack = "Thunder Shock";
             sig_attack = "Thunder";
             strengths[0] = 2; // Water
@@ -70,6 +74,7 @@ Pokemon::Pokemon(int new_PokemonID) {
             name = "Machop";
             HP = 400;
             attack = "Karate Chop";
+            pokemon_type = 9;
             sig_attack = "Seismic Toss";
             strengths[0] = 5; // Normal
             strengths[1] = 0; // None
@@ -83,6 +88,7 @@ Pokemon::Pokemon(int new_PokemonID) {
             name = "Rattata";
             HP = 400;
             attack = "Tail Whip";
+            pokemon_type = 5;
             sig_attack = "Super Fang";
             stringStrengths = "No Strengths";
             strengths[0] = 0; // None
@@ -96,6 +102,7 @@ Pokemon::Pokemon(int new_PokemonID) {
             name = "Sandshrew";
             HP = 220;
             attack = "Sand Attack";
+            pokemon_type = 3;
             sig_attack = "Fury Swipes";
             strengths[0] = 6; // Electric
             strengths[1] = 1; // Fire
@@ -110,6 +117,7 @@ Pokemon::Pokemon(int new_PokemonID) {
             HP = 1000;
             attack = "Slam";
             sig_attack = "Dragon Rage";
+            pokemon_type = 10;
             strengths[0] = 4; // Grass
             strengths[1] = 1; // Fire
             strengths[2] = 2; // Water
