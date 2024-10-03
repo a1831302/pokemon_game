@@ -118,7 +118,7 @@ Pokemon::Pokemon(){
 
 string Pokemon::get_Pokemon_name(){
     return name;
-}
+};
 
 void Pokemon::set_Pokemon_HP(int new_HP){
     HP = new_HP;
@@ -138,6 +138,6 @@ void Pokemon::print_Pokemon_info(int PokemonID) {
     cout << "Strengths: " << stringStrengths << "\n";
     cout << "Weaknesses: " << stringWeaknesses << "\n";
 
-}
+};
 
 
