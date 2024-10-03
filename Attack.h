@@ -12,7 +12,7 @@ public:
 
     int sig_damage;
     int type_damage;
-    int quick_attack;
+    int quick_damage;
 
     int num_hits;
 
@@ -32,7 +32,7 @@ public:
     int get_numHits();
 
     //HP drain function
-    void HP_drain(int attack_stat);
+    int HP_drain(int hp_deduct);
 };
 
 #endif
