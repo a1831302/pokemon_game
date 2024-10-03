@@ -17,7 +17,7 @@ class Pokemon {
         int HP;
         string attack;
         string sig_attack;
-        int[2] strengths;
+        int[3] strengths;
         int[2] = weaknesses;
         
         Pokemon();
