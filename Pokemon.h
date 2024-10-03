@@ -14,9 +14,9 @@ class Pokemon {
         int HP;
         string attack;
         string sig_attack;
-        int strengths[4]; // maximum of 4 strengths
+        int strengths[3]; // maximum of 4 strengths
         string stringStrengths;
-        int weaknesses[3]; // maximum of 3 weaknesses
+        int weaknesses[2]; // maximum of 3 weaknesses
         string stringWeaknesses; // for printing out
         
         Pokemon();
