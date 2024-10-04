@@ -9,7 +9,7 @@ Enemy::Enemy(){
 }
 
 // constructor
-Enemy::Enemy(Robot new_enemy_pokemon){
+Enemy::Enemy(Pokemon new_enemy_pokemon){
     
     Enemy_pokemon = new_enemy_pokemon;
 }
