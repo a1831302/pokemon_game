@@ -61,15 +61,18 @@ bool Attack::hit_success(int attack_used){
     // Generate a random number
     int chance = dist(rng);
     hit_success = 0;
+    n = get_numHits();
 
     if (attack_used == 1 && chance > 20){
         hit_success = 1;
+        set_numHits(n++);
     }
     if (attack_used == 1 && chance < 20){
         hit_success = 0;
     }
     if (attack_used == 2 && chance > 50){
         hit_success = 1;
+        set_numHits(n++);
     }
     if (attack_used == 2 && chance < 50){
         hit_success = 0;
