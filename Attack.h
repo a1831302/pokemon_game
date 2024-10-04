@@ -6,7 +6,7 @@
 
 #include "Pokemon.h"
 
-//Attack Robot class child class of Robot
+//Attack Robot class child class of Pokemon
 class Attack : public Pokemon{
 public:
 
