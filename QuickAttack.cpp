@@ -9,7 +9,9 @@
 
 using namespace std;
 
-QuickAttack::QuickAttack() {
+QuickAttack::QuickAttack() {};
+
+QuickAttack::QuickAttack(int chance) {
     cout << name << " used quick attack!" << endl;
         if (chance < 80){ //20% chance of missing
             attack_type = 5; // normal type
