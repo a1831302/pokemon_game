@@ -9,7 +9,8 @@
 
 using namespace std;
 
-TypeAttack::TypeAttack() {
+TypeAttack::TypeAttack() {}
+TypeAttack::TypeAttack(int chance) {
     cout << name << " used type attack!" << endl;
         if (chance < 50){ //50% chance of missing
             attack_type = pokemon_type; // pokemon type
