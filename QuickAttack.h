@@ -12,7 +12,7 @@ class QuickAttack : public Attack{
 public:
     //constructor
     QuickAttack();
-
+    QuickAttack(int chance);
     
 
 
