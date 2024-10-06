@@ -1,167 +1,84 @@
 #include <iostream>
 #include <string>
+#include <fstream>   // for file handling
+#include <sstream>   // for string stream
 #include <algorithm> // for std::fill
 #include "Pokemon.h"
 
 using namespace std;
 
-// strengths: Fire = 1, Water = 2, Ground = 3, Grass = 4, Normal = 5, Electric = 6, Psychic = 7, Fairy = 8, Fighting = 9, Dragon = 10
-
-// constructor
 Pokemon::Pokemon(int new_PokemonID) {
-    // Initialize strengths and weaknesses arrays with zeros
-    fill(begin(strengths), end(strengths), 0);
-    fill(begin(weaknesses), end(weaknesses), 0);
-    
-    switch(new_PokemonID) {
-        case 1:
-            name = "Squirtle";
-            HP = 200;
-            pokemon_type = 2;
-            attack = "Water Gun";
-            sig_attack = "Hydro Pump";
-            strengths[0] = 1; // Fire
-            strengths[1] = 0; // None
-            strengths[2] = 0; //None
-            stringStrengths = "Fire";
-            weaknesses[0] = 6; // Electric
-            weaknesses[1] = 4; // Grass
-            stringWeaknesses = "Electric, Grass";
-            break;
-        case 2:
-            name = "Bulbasaur";
-            HP = 200;
-            pokemon_type = 4;
-            attack = "Vine Whip";
-            sig_attack = "Solar Beam";
-            strengths[0] = 2; // Water
-            strengths[1] = 3; // Ground
-            strengths[2] = 0; // None
-            stringStrengths = "Water, Ground";
-            weaknesses[0] = 1; // Fire
-            weaknesses[1] = 0; // None
-            stringWeaknesses = "Fire";
-            break;
-        case 3:
-            name = "Charmander";
-            HP = 200;
-            attack = "Ember";
-            pokemon_type = 1;
-            sig_attack = "Flamethrower";
-            strengths[0] = 4; // Grass
-            strengths[1] = 0; // None
-            strengths[2] = 0; // None
-            stringStrengths = "Grass";
-            weaknesses[0] = 3; // Ground
-            weaknesses[1] = 2; // Water
-            stringWeaknesses = "Ground, Water";
-            break;
-        case 4:
-            name = "Pikachu";
-            HP = 200;
-            pokemon_type = 6;
-            attack = "Thunder Shock";
-            sig_attack = "Thunder";
-            strengths[0] = 2; // Water
-            strengths[1] = 0; // None
-            strengths[2] = 0; // None
-            stringStrengths = "Water";
-            weaknesses[0] = 3; // Ground
-            weaknesses[1] = 0; // None
-            stringWeaknesses = "Ground";
-            break;
-        case 5:
-            name = "Machop";
-            HP = 400;
-            attack = "Karate Chop";
-            pokemon_type = 9;
-            sig_attack = "Seismic Toss";
-            strengths[0] = 5; // Normal
-            strengths[1] = 0; // None
-            strengths[2] = 0; // None
-            stringStrengths = "Normal";
-            weaknesses[0] = 0; // None
-            weaknesses[1] = 0; // None
-            stringWeaknesses = "Psychic, Fairy";
-            break;
-        case 6:
-            name = "Rattata";
-            HP = 400;
-            attack = "Tail Whip";
-            pokemon_type = 5;
-            sig_attack = "Super Fang";
-            stringStrengths = "No Strengths";
-            strengths[0] = 0; // None
-            strengths[1] = 0; // None
-            strengths[2] = 0; // None
-            weaknesses[0] = 9; // Fighting
-            weaknesses[1] = 0; // None
-            stringWeaknesses = "Fighting";
-            break;
-        case 7:
-            name = "Sandshrew";
-            HP = 220;
-            attack = "Sand Attack";
-            pokemon_type = 3;
-            sig_attack = "Fury Swipes";
-            strengths[0] = 6; // Electric
-            strengths[1] = 1; // Fire
-            strengths[2] = 0; // None
-            stringStrengths = "Electric, Fire";
-            weaknesses[0] = 2; // Water
-            weaknesses[1] = 4; // Grass
-            stringWeaknesses = "Water, Grass";
-            break;   
-        case 8:  
-            name = "Dragonite";
-            HP = 1000;
-            attack = "Slam";
-            sig_attack = "Dragon Rage";
-            pokemon_type = 10;
-            strengths[0] = 4; // Grass
-            strengths[1] = 1; // Fire
-            strengths[2] = 2; // Water
-            stringStrengths = "Grass, Fire, Water";
-            weaknesses[0] = 0; // None
-            weaknesses[1] = 0; // None
-            stringWeaknesses = "Psychic, Fairy";
-            break; 
-        default:
-            name = "";
-            HP = 0;
-            attack = "";
-            sig_attack = "";
-            stringStrengths = "";
-            stringWeaknesses = "";
-            break;
+    ifstream file("pokemon.txt");
+
+    if (!file) {
+        cerr << "Error opening file." << endl;
+        return;
     }
+
+    string line;
+    while (getline(file, line)) {
+        istringstream ss(line);
+
+        int id, HP, type;
+        string name, attack, sig_attack;
+        int strengths[3], weaknesses[2];
+
+        // Extract data from the line
+        ss >> id >> name >> HP >> type >> attack >> sig_attack 
+           >> strengths[0] >> strengths[1] >> strengths[2] 
+           >> weaknesses[0] >> weaknesses[1];
+
+        // If the ID matches the one requested, initialize the object
+        if (id == new_PokemonID) {
+            this->name = name;
+            this->HP = HP;
+            this->pokemon_type = type;
+            this->attack = attack;
+            this->sig_attack = sig_attack;
+            
+            // Fill strengths array and convert to string
+            fill(begin(this->strengths), end(this->strengths), 0);
+            for (int i = 0; i < 3; ++i) {
+                this->strengths[i] = strengths[i];
+            }
+            this->stringStrengths = getTypeName(strengths[0]);
+            if (strengths[1] != 0) this->stringStrengths += ", " + getTypeName(strengths[1]);
+            if (strengths[2] != 0) this->stringStrengths += ", " + getTypeName(strengths[2]);
+
+            // Fill weaknesses array and convert to string
+            fill(begin(this->weaknesses), end(this->weaknesses), 0);
+            for (int i = 0; i < 2; ++i) {
+                this->weaknesses[i] = weaknesses[i];
+            }
+            this->stringWeaknesses = getTypeName(weaknesses[0]);
+            if (weaknesses[1] != 0) this->stringWeaknesses += ", " + getTypeName(weaknesses[1]);
+
+            break; // Once the Pokémon is found, exit the loop
+        }
+    }
+
+    if (file.eof() && name.empty()) {
+        cerr << "Pokemon ID not found in file." << endl;
+    }
+
+    file.close();
 }
 
-// default constructor
-Pokemon::Pokemon() {
-    name = "No Name";
-    HP = 0;
-    attack = "No Attack";
-    sig_attack = "No Signature Attack";
-    fill(begin(strengths), end(strengths), 0);
-    stringStrengths = "No Strengths";
-    fill(begin(weaknesses), end(weaknesses), 0);
-    stringWeaknesses = "No Weaknesses";
-}
-
-// Get the Pokemon's name
-string Pokemon::get_Pokemon_name() {
-    return name;
-}
-
-// Set the Pokemon's HP
-void Pokemon::set_Pokemon_HP(int new_HP) {
-    HP = new_HP;
-}
-
-// Get the Pokemon's HP
-int Pokemon::get_Pokemon_HP() {
-    return HP;
+// Function to convert type integer to string for strengths and weaknesses
+string Pokemon::getTypeName(int type) {
+    switch(type) {
+        case 1: return "Fire";
+        case 2: return "Water";
+        case 3: return "Ground";
+        case 4: return "Grass";
+        case 5: return "Normal";
+        case 6: return "Electric";
+        case 7: return "Psychic";
+        case 8: return "Fairy";
+        case 9: return "Fighting";
+        case 10: return "Dragon";
+        default: return "None";
+    }
 }
 
 // Print Pokemon info

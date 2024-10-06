@@ -19,14 +19,18 @@ class Pokemon {
         string stringStrengths;
         int weaknesses[2]; // maximum of 3 weaknesses
         string stringWeaknesses; // for printing out
+        int type;
         
         Pokemon();
         Pokemon(int new_PokemonID);
 
         void print_Pokemon_info(int PokemonID);
-        void set_Pokemon_HP(int new_HP);
-        int get_Pokemon_HP();
-        string get_Pokemon_name();
+
+        string getTypeName(int type);
+
+
+    
+
 };
 
 #endif
