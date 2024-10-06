@@ -104,12 +104,21 @@ int game::start_game(){
     //chosen attack
     if (choice == 1) {
         int attack_choice;   
-        cout<<"Pick an attack: "<<endl;
-        cout<<"Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
-        cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << num_Hits << "previous attacks. " << endl;
-        cout<<"Tackle(1), Quick Attack(2), Protect(3)"<<endl;
-            
+        cout << "Pick an attack: " << endl;
+        cout << "Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
+        cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << player_Pok.get_num_Hits() << "previous attacks. " << endl;
+        cout << "Quick Attack(1), Type Attack(2), Signatuer Attack(3)" << endl;
 
+        //again work out redraw functiona d highlighted text instead of 1,2,3
+        while(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
+            cout<< "select move:" <<endl;
+            cin >> attack_choice;
+            if(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Invalid input.  Try again: ";
+            }
+        }        
 
 
 
