@@ -17,8 +17,8 @@ int game::start_game(){
     cout << "Welcome to Pokemon Battles!"<<"\n"
     << "The aim of the game is to defeat as many pokemons as you can." << "\n"
     << "Your chosen Pokemon will have  HP, strengths and weaknesses." << "\n" 
-    << "HP is how much health your pokemon still has. There are 3 types of attack: quick attack deals 10 damage, \n";
-    << "type attack deals 20 damage, and th signature attack deals 70 damage, but requires you to have had 5 successful attacks. \n";
+    << "HP is how much health your pokemon still has. There are 3 types of attack: quick attack deals 10 damage with 80% success rate, \n";
+    << "type attack deals 30 damage with 50% success rate, and the signature attack deals 70 damage, but requires you to have had 5 successful attacks. \n";
     << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness. \n";
     << "There also medicines avalible to increase your HP, and can be utilsied instead of an attack. \n";
 
