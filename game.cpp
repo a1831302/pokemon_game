@@ -45,7 +45,7 @@ int game::start_game(){
 
     cout << "Now it's time for your first battle" << endl;
 
-    while(player_Pok.get_robot_HP() > 0 && enemy_Pok.get_robot_HP() > 0){
+    while(player_Pok.get_Pokemon_HP() > 0 && enemy_Pok.get_Pokemon_HP() > 0){
         
         //ask user if they would like to use a medicine or attack
         //either 1 or 2 or do it like highlighted text etc
@@ -83,11 +83,11 @@ int game::start_game(){
                 }
             }
             medicine selected_medicine = *(player_user_Pok.get_medicine_bag_pointer() + (medicine_choice - 1));
-            int current_hp = player_Pok.get_robot_HP();
+            int current_hp = player_Pok.get_Pokemon_HP();
             int hp_gained = selected_medicine.getMedicineHealing();
 
-            player_Pok.set_robot_HP(current_hp + hp_gained);
-            cout << "Your Pokemon gained " << hp_gained << "HP. Your total HP is now " << user_robot.get_robot_HP() << "." << endl;
+            player_Pok.set_Pokemon_HP(current_hp + hp_gained);
+            cout << "Your Pokemon gained " << hp_gained << "HP. Your total HP is now " << player_Pok.get_Pokemon_HP() << "." << endl;
 
             player_user_Pok.remove_medicine(medicine_choice);
 
@@ -95,7 +95,7 @@ int game::start_game(){
             int opp_attack = enemy_Pok.get_Pokemon_attack();
             player_Pok.HP_drain(opp_attack);
 
-            cout << "The enemy attacked you with " << opp_attack << " damage. Your HP is now " << player_Pok.get_robot_HP() << endl; 
+            cout << "The enemy attacked you with " << opp_attack << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl; 
             potion_choice =0;
         }
 
