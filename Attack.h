@@ -13,7 +13,7 @@ public:
     int damage;
     int attack_type;
     //bool hit_success;
-    int num_hits;
+    
     int chance;
 
     //returns value (chance) between 1 and 100 to use for quick and type attacks
