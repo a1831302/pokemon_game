@@ -8,39 +8,39 @@
 using namespace std;
 
 int main() {
-    // Create a Pokémon
-    Pokemon pikachu;
-    pikachu.name = "Pikachu";
-    pikachu.pokemon_type = 6;  // Electric type for example
-    pikachu.HP = 200;
+    // Create Pokémon objects
+    Pokemon squirtle(1);  // Squirtle
+    Pokemon charmander(3);  // Charmander
+    Pokemon pikachu(4);  // Pikachu
 
-    // Print initial Pokémon info
-    cout << "Starting Test for " << pikachu.name << " (HP: " << pikachu.HP << ")" << endl;
+    // Print out their initial information
+    cout << "\n--- Testing Squirtle ---" << endl;
+    squirtle.print_Pokemon_info(1);
 
-    // Test Quick Attack
-    cout << "\n---Testing Quick Attack---" << endl;
-    QuickAttack quickAtk(pikachu.success_rate());  // Generates a random chance
-    pikachu.HP -= quickAtk.damage;  // Deduct damage from Pokémon's HP if hit was successful
-    cout << pikachu.name << "'s HP after Quick Attack: " << pikachu.HP << endl;
+    cout << "\n--- Testing Charmander ---" << endl;
+    charmander.print_Pokemon_info(3);
 
-    // Test Type Attack
-    cout << "\n---Testing Type Attack---" << endl;
-    TypeAttack typeAtk(pikachu.success_rate());  // Generates a random chance
-    pikachu.HP -= typeAtk.damage;  // Deduct damage from Pokémon's HP if hit was successful
-    cout << pikachu.name << "'s HP after Type Attack: " << pikachu.HP << endl;
+    cout << "\n--- Testing Pikachu ---" << endl;
+    pikachu.print_Pokemon_info(4);
 
-    // Simulate multiple hits to enable Signature Attack
-    cout << "\nSimulating hits for Signature Attack..." << endl;
-    pikachu.num_hits = 5;  // Simulate that 5 successful hits have occurred
+    // Quick Attack on Squirtle
+    cout << "\n--- Squirtle Quick Attack Simulation ---" << endl;
+    QuickAttack quickAtk(squirtle.success_rate());  // Generates a random chance
+    squirtle.set_Pokemon_HP(squirtle.get_Pokemon_HP() - quickAtk.damage);  // Deduct HP if hit
+    cout << squirtle.get_Pokemon_name() << "'s HP after Quick Attack: " << squirtle.get_Pokemon_HP() << endl;
 
-    // Test Signature Attack
-    cout << "\n---Testing Signature Attack---" << endl;
-    SigAttack sigAtk(pikachu.num_hits);  // Signature Attack should be ready after 5 hits
-    pikachu.HP -= sigAtk.damage;  // Deduct damage from Pokémon's HP if signature attack hits
-    cout << pikachu.name << "'s HP after Signature Attack: " << pikachu.HP << endl;
+    // Type Attack on Charmander
+    cout << "\n--- Charmander Type Attack Simulation ---" << endl;
+    TypeAttack typeAtk(charmander.success_rate());
+    charmander.set_Pokemon_HP(charmander.get_Pokemon_HP() - typeAtk.damage);  // Deduct HP if hit
+    cout << charmander.get_Pokemon_name() << "'s HP after Type Attack: " << charmander.get_Pokemon_HP() << endl;
 
-    // Print final Pokémon info
-    cout << "\nFinal HP of " << pikachu.name << ": " << pikachu.HP << endl;
+    // Signature Attack Simulation for Pikachu
+    cout << "\n--- Pikachu Signature Attack Simulation ---" << endl;
+    pikachu.num_hits = 5;  // Simulate 5 successful hits
+    SigAttack sigAtk(pikachu.num_hits);
+    pikachu.set_Pokemon_HP(pikachu.get_Pokemon_HP() - sigAtk.damage);  // Deduct HP if hit
+    cout << pikachu.get_Pokemon_name() << "'s HP after Signature Attack: " << pikachu.get_Pokemon_HP() << endl;
 
     return 0;
 }
