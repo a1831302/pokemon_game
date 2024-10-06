@@ -81,6 +81,10 @@ string Pokemon::getTypeName(int type) {
     }
 }
 
+int Pokemon::get_num_hits() {
+    return num_hits;
+}
+
 // Print Pokemon info
 void Pokemon::print_Pokemon_info(int PokemonID) {
     cout << "Name: " << name << "\n";
