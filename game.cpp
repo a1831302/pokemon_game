@@ -67,7 +67,7 @@ int game::start_game(){
         }
         }
 
-        //choose medicine
+    //choose medicine
         if (choice == 2){
             int medicine_choice = 0;
             cout << "You have " << player_user_Pok.get_medicine_count() << " medicines. Enter a number to choose which medicine you would like to use:" << endl;
@@ -100,6 +100,24 @@ int game::start_game(){
         }
 
         choice =0;
+
+    //chosen attack
+    if (choice == 1) {
+        int attack_choice;   
+        cout<<"Pick an attack: "<<endl;
+        cout<<"Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
+        cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << num_Hits << "previous attacks. " << endl;
+        cout<<"Tackle(1), Quick Attack(2), Protect(3)"<<endl;
+            
+
+
+
+
+
+
+
+    }
+
 
     
 
