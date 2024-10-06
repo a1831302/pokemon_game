@@ -30,6 +30,7 @@ class Pokemon {
         string getTypeName(int type);
         int get_num_hits();
         int get_Pokemon_HP();
+        void set_Pokemon_HP();
 
     
 
