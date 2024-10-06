@@ -120,8 +120,18 @@ int game::start_game(){
             }
         }        
 
+        //quick attack
 
 
+        
+
+        //type attack
+
+
+
+        
+        //sig attack
+        
 
 
 
