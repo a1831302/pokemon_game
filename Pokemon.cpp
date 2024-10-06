@@ -89,6 +89,10 @@ int Pokemon::get_Pokemon_HP() {
     return HP;
 }
 
+void Pokemon::set_Pokemon_HP(int new_HP) {
+    HP = new_HP;
+}
+
 // Print Pokemon info
 void Pokemon::print_Pokemon_info(int PokemonID) {
     cout << "Name: " << name << "\n";
