@@ -27,6 +27,8 @@ int game::start_game(){
     Pokemon enemy_Pok = Pokemon(Pok_ID);
     Enemy enemy_user_Pok = Enemy(enemy_Pok);
 
+    //number of enemies beaten
+    int num_wins = 0;
 
     //display first three available Pokemon stats, and get user to select from them and store in chosen_ID
 
@@ -46,7 +48,7 @@ int game::start_game(){
     cout << "Now it's time for your first battle" << endl;
 
     while(player_Pok.get_Pokemon_HP() > 0 && enemy_Pok.get_Pokemon_HP() > 0){
-        
+        cout << "Currently, your HP is: " << player_Pok.get_Pokemon_HP() << "\n The Enemy's HP is: " << enemy_Pok.get_Pokemon_HP() << endl;
         //ask user if they would like to use a medicine or attack
         //either 1 or 2 or do it like highlighted text etc
         int choice = 0;;
@@ -91,15 +93,17 @@ int game::start_game(){
 
             player_user_Pok.remove_medicine(medicine_choice);
 
-            //enemy attacks you
+            //CHECK THIS
+            //enemy attacks you after you choose and use medicine
             int opp_attack = enemy_Pok.get_Pokemon_attack();
             player_Pok.HP_drain(opp_attack);
 
             cout << "The enemy attacked you with " << opp_attack << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl; 
             potion_choice =0;
+            choice =0;
         }
 
-        choice =0;
+        
 
     //chosen attack
     if (choice == 1) {
@@ -131,14 +135,28 @@ int game::start_game(){
 
         
         //sig attack
+
+
         
 
+    } //end attack section
 
+
+//work out how to do new enemy on cycle, if enemy HP is 0. Might do nested while loop, but will check Jadens properly
+
+
+
+
+    //if player has lost
+    if (player_Pok.get_Pokemon_HP() <= 0) {
+        cout << "You lose! You beat " << num_wins << "enemies. " << endl;
+
+        //save number of enemies beaten to text file
+        
 
     }
 
 
-    
 
 
 
