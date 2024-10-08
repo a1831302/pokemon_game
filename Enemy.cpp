@@ -24,6 +24,8 @@ Enemy::Enemy(Pokemon new_enemy_pokemon){
     int choice = dist(rng);
 
     Pokemon new_enemy_pokemon(choice);
+
+    //actually not too sure if this is needed. 
     enemy_name = new_enemy_pokemon.name;
     enemy_HP = new_enemy_pokemon.get_Pokemon_HP();
     enemy_type = new_enemy_pokemon.type;
