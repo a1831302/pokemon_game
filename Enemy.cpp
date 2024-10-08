@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
+#include <random> 
 #include "Enemy.h"
+#include "Pokemon.h"
+
 using namespace std;
 
 // default constructor
@@ -10,8 +13,26 @@ Enemy::Enemy(){
 
 // constructor
 Enemy::Enemy(Pokemon new_enemy_pokemon){
-    
-    Enemy_pokemon = new_enemy_pokemon;
+    // Initialize a random number engine
+    std::random_device dev;  
+    std::mt19937 rng(dev()); 
+
+    // Define the distribution range (e.g., between 1 and 100)
+    std::uniform_int_distribution<std::mt19937::result_type> dist(1, 8);
+
+    // Generate a random number
+    int choice = dist(rng);
+
+    Pokemon new_enemy_pokemon(choice);
+    enemy_name = new_enemy_pokemon.name;
+    enemy_HP = new_enemy_pokemon.get_Pokemon_HP();
+    enemy_attack = new_enemy_pokemon.attack;
+    enemy_sig = new_enemy_pokemon.sig_attack; 
+    enemy_strengths[0] = new_enemy_pokemon.strengths[0];
+    enemy_strengths[1] = new_enemy_pokemon.strengths[1];
+    enemy_strengths[2] = new_enemy_pokemon.strengths[2];
+    enemy_weakness[0] = new_enemy_pokemon.weaknesses[0];
+    enemy_weakness[1] = new_enemy_pokemon.weaknesses[0];
 }
 
 void Enemy::set_pokemon(Pokemon new_enemy_pokemon){enemy_pokemon = new_enemy_pokemon;}
