@@ -16,6 +16,7 @@ class Enemy : public Pokemon {
         int enemy_HP;
         string enemy_attack;
         string enemy_sig; 
+        int enemy_type;
         int enemy_strengths[3];
         int enemy_weakness[2];
         

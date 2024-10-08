@@ -26,6 +26,7 @@ Enemy::Enemy(Pokemon new_enemy_pokemon){
     Pokemon new_enemy_pokemon(choice);
     enemy_name = new_enemy_pokemon.name;
     enemy_HP = new_enemy_pokemon.get_Pokemon_HP();
+    enemy_type = new_enemy_pokemon.type;
     enemy_attack = new_enemy_pokemon.attack;
     enemy_sig = new_enemy_pokemon.sig_attack; 
     enemy_strengths[0] = new_enemy_pokemon.strengths[0];

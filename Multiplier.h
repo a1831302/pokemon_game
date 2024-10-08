@@ -7,25 +7,13 @@
 
 #include "Pokemon.h"
 
-//Attack Robot class child class of Pokemon
-class Attack : public Pokemon{
+
+class Multiplier : public Pokemon{
 public:
+    Multiplier() 
 
-    int attack_used;
-    int damage;
-    int attack_type;
-
-    int num_hits;
-
-    //constructor
-    Attack();
-    Attack(int attack_used);
-
-    int set_numHits(int num_hits);
-    int get_numHits();
-
-    //HP drain function
-    int HP_drain(int hp_deduct);
+    Multiplier(int pokemon_type)
+    
 };
 
 #endif
