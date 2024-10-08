@@ -10,10 +10,12 @@
 
 class Multiplier : public Pokemon{
 public:
-    Multiplier() 
-
-    Multiplier(int pokemon_type)
+    int multiplier;
     
+    Multiplier() ;
+    
+    Multiplier(int pokemon_type);
+
 };
 
 #endif

@@ -10,9 +10,11 @@
 
 using namespace std;
 
-Multiplier::Multiplier() {
-    //empty default constructor
-}
+
+//empty default constructor
+Multiplier::Multiplier() {}
+    
+
 
 Multiplier::Multiplier(int pokemon_type) {
     
@@ -28,7 +30,7 @@ Multiplier::Multiplier(int pokemon_type) {
     }
 
     //looking for weakness
-        for (int i = 0; i < 1; i++){
+    for (int i = 0; i < 1; i++){
         if (type = weaknessess[i]){
             multiplier = 2;
         }

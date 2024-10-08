@@ -14,6 +14,7 @@ class Enemy : public Pokemon {
     public:
         string enemy_name;
         int enemy_HP;
+        int enemy_move;
         string enemy_attack;
         string enemy_sig; 
         int enemy_type;
@@ -22,6 +23,8 @@ class Enemy : public Pokemon {
         
         Enemy();   // default constructor
         Enemy(Pokemon new_enemy_Pokemon);   // constructor
+
+        int enemy_move();
         void set_pokemon(Pokemon new_enemy_Pokemon);   // used to set the pokemon the opponent has
         
         Pokemon get_pokemon();   // used to get the pokemon the opponent has

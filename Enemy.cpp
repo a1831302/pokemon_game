@@ -3,6 +3,7 @@
 #include <random> 
 #include "Enemy.h"
 #include "Pokemon.h"
+#include "Attack.h"
 
 using namespace std;
 
@@ -73,4 +74,22 @@ void Enemy::set_name(){
         cout << "Error - please pick 1, 2 or 3." << endl;
     }
 }
+}
+
+
+int Enemy::enemy_move(){
+    // Initialize a random number engine
+    std::random_device dev;  
+    std::mt19937 rng(dev()); 
+
+    // Define the distribution range (e.g., between 1 and 100)
+    std::uniform_int_distribution<std::mt19937::result_type> dist(1, 2);
+
+    // Generate a random number
+    int move = dist(rng);
+    switch(move){
+        case 1:
+        case 2:
+        default:
+    };
 }
