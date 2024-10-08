@@ -52,7 +52,7 @@ void Player::remove_medicine(int medicine_number){
 }
 
 // returns medicine_bag
-medicine* Player::get_medicine_bag_pointer(){return potion_bag;}
+medicine* Player::get_medicine_bag_pointer(){return medicine_bag;}
 
 // returns medicine_count
 int Player::get_medicine_count(){return medicine_count;}
