@@ -23,12 +23,12 @@ Enemy::Enemy() : Pokemon(get_random_PokemonID()) {
 }
 
 // Method to print enemy's Pokemon information
-void Enemy::print_enemy_info() {
-    cout << "Enemy Pokemon: " << enemy_name << endl;
-    cout << "HP: " << enemy_HP << endl;
-    cout << "Attack: " << enemy_attack << endl;
-    cout << "Signature Move: " << enemy_sig << endl;
-    cout << "Type: " << getTypeName(enemy_type) << endl;
+void Enemy::print_enemy_info(enemy_Pokemon) {
+    cout << "Enemy Pokemon: " << enemy_Pokemon.name << endl;
+    cout << "HP: " << enemy_Pokemon.HP << endl;
+    //cout << "Attack: " << enemy_Pokemon.attack << endl;
+    cout << "Signature Move: " << enemy_Pokemon.enemy_sig << endl;
+    cout << "Type: " << enemy_Pokemon.getTypeName(enemy_type) << endl;
 }
 
 // Method to print strengths and weaknesses
