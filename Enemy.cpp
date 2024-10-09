@@ -12,8 +12,11 @@ Enemy::Enemy(){
     enemy_pokemon = Pokemon();
 }
 
+//NEED TO ADD A NUM ENEMY FUNCTION
+
 // constructor
 Enemy::Enemy(Pokemon new_enemy_pokemon){
+
     // Initialize a random number engine
     std::random_device dev;  
     std::mt19937 rng(dev()); 
@@ -92,4 +95,11 @@ int Enemy::enemy_move(){
         case 2:
         default:
     };
+}
+
+int Enemy::num_enemies(){};
+
+int Enemy::num_enemies(int num_enemies){
+    num_enemies++;
+    return num_enemies;
 }

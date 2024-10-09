@@ -20,6 +20,11 @@ class Enemy : public Pokemon {
         int enemy_type;
         int enemy_strengths[3];
         int enemy_weakness[2];
+
+        int num_enemies;
+        int num_enemies();
+        int num_enemies(int num_enemies);
+
         
         Enemy();   // default constructor
         Enemy(Pokemon new_enemy_Pokemon);   // constructor

@@ -54,7 +54,7 @@ int displayMenu(std::string menu[], int menuSize) {
         c = _getch();  // Get user input
         
         if (c == 27) {  // Check for arrow keys (esc sequence starts with 27)
-            _getch();    // Skip the '[' character
+            _getch();    
             switch (_getch()) {
                 case 'A':
                     highlight = (highlight == 0) ? menuSize - 1 : highlight - 1;
