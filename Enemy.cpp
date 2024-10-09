@@ -53,7 +53,7 @@ string Enemy::get_enemy_name() {
 }
 
 // Function to generate random PokemonID
-int Enemy::get_random_PokemonID() {
+int Enemy::get_enemy_ID() {
     // Initialize a random number engine
     std::random_device dev;  
     std::mt19937 rng(dev()); 
@@ -62,9 +62,9 @@ int Enemy::get_random_PokemonID() {
     std::uniform_int_distribution<std::mt19937::result_type> dist(1, 8);
 
     // Generate a random number
-    int choice = dist(rng);
+    int enemyID = dist(rng);
 
-    return choice; // Generate random PokemonID
+    return enemyID; // Generate random PokemonID
 }
 
 void Enemy::set_pokemon(Pokemon new_enemy_pokemon){enemy_pokemon = new_enemy_pokemon;}

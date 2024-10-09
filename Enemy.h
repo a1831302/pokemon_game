@@ -36,7 +36,7 @@ class Enemy : public Pokemon {
         int get_enemy_type();
         string get_enemy_name();
 
-        int get_random_PokemonID();
+        int get_enemy_ID() ;
 };
 
 #endif //ENEMY_H
