@@ -116,3 +116,10 @@ int* Pokemon::getWeaknesses() {
 int Pokemon::getPokemonType() {
     return pokemon_type;
 }
+
+void Pokemon::HP_drain(int damage) {
+    HP = HP - damage;
+    if (HP < 0) {
+    HP = 0;
+    }
+}
