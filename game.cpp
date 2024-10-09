@@ -1,11 +1,18 @@
 //commenting for game file
 //player1 = player_user_pok, user_robot = player_pok
-#include "game.h"
+
 #include "Pokemon.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Attack.h"
+#include "QuickAttack.h"
+#include "SigAttack.h"
+#include "TypeAttack.h"
+#include "medicine.h"
+
 
 #include <limits>
+#include <algorithm>
 #include <iostream>
 #include <string>
 
@@ -107,16 +114,17 @@ int game::start_game(){
 
     //chosen attack
     if (choice == 1) {
-        int attack_choice;   
+        int attack_choice = 0;   
         cout << "Pick an attack: " << endl;
         cout << "Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
         cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << player_Pok.get_num_Hits() << "previous attacks. " << endl;
-        cout << "Quick Attack(1), Type Attack(2), Signatuer Attack(3)" << endl;
+        cout << "Quick Attack(1), Type Attack(2), Signature Attack(3)" << endl;
 
         //again work out redraw functiona d highlighted text instead of 1,2,3
         while(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
-            cout<< "select move:" <<endl;
+            cout<< "Select move:";
             cin >> attack_choice;
+            cout << endl;
             if(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -124,18 +132,39 @@ int game::start_game(){
             }
         }        
 
+        //use attack function success rate to find chance for future attack
+        Attack rateAttack = Attack();
+        chance = rateAttack.success_rate();
+
         //quick attack
+        if (attack_choice = 1) {
+            QuickAttack quickattack1 = QuickAttack(chance);
 
-
+            enemy_Pok.HP_drain(quickattack1.damage);
+        }
+        
         
 
         //type attack
+        if (attack_choice = 2) {
+            TypeAttack typeattack1 = TypeAttack(chance);
 
+            //multiplier function
+                
+            enemy_Pok.HP_drain(typeattack1.damage);
 
+        }
 
         
         //sig attack
+        if (attack_choice = 3) {
+            SigAttack sigattack1 = SigAttack(player_Pok.get_num_hits());
 
+            //multiplier function
+                
+            enemy_Pok.HP_drain(sigattack1.damage);
+
+        }
 
         
 
