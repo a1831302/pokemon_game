@@ -35,6 +35,8 @@ class Pokemon {
         int* getStrengths();
         int* getWeaknesses();
         int getPokemonType();
+
+        void HP_drain(int damage);
     
 
 };
