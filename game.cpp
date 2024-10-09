@@ -29,10 +29,6 @@ int game::start_game(){
     << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness. \n";
     << "There also medicines avalible to increase your HP, and can be utilsied instead of an attack. \n";
 
-    //rng to get random pokemon ID Pok_ID
-    //initiate first pokemon and assign it to enemy. 
-    Pokemon enemy_Pok = Pokemon(Pok_ID);
-    Enemy enemy_user_Pok = Enemy(enemy_Pok);
 
     //number of enemies beaten
     int num_wins = 0;
@@ -52,9 +48,18 @@ int game::start_game(){
     player_user_Pok.add_medicine(3, potion("Morphine", 75));
 
 
-    cout << "Now it's time for your first battle" << endl;
+    cout << "It's time for your first battle!" << endl;
 
-    while(player_Pok.get_Pokemon_HP() > 0 && enemy_Pok.get_Pokemon_HP() > 0){
+    while(player_Pok.get_Pokemon_HP() > 0) { 
+        //rng to get random pokemon ID Pok_ID
+
+        
+        //initiate pokemon and assign it to enemy. 
+        Pokemon enemy_Pok = Pokemon(Pok_ID);
+        Enemy enemy_user_Pok = Enemy(enemy_Pok);
+
+        
+        while (enemy_Pok.get_Pokemon_HP() > 0){
         cout << "Currently, your HP is: " << player_Pok.get_Pokemon_HP() << "\n The Enemy's HP is: " << enemy_Pok.get_Pokemon_HP() << endl;
         //ask user if they would like to use a medicine or attack
         //either 1 or 2 or do it like highlighted text etc
@@ -100,13 +105,6 @@ int game::start_game(){
 
             player_user_Pok.remove_medicine(medicine_choice);
 
-            //CHECK THIS
-            //enemy attacks you after you choose and use medicine
-            int opp_attack = enemy_Pok.get_Pokemon_attack();
-            player_Pok.HP_drain(opp_attack);
-
-            cout << "The enemy attacked you with " << opp_attack << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl; 
-            potion_choice =0;
             choice =0;
         }
 
@@ -143,8 +141,6 @@ int game::start_game(){
             enemy_Pok.HP_drain(quickattack1.damage);
         }
         
-        
-
         //type attack
         if (attack_choice = 2) {
             TypeAttack typeattack1 = TypeAttack(chance);
@@ -154,7 +150,6 @@ int game::start_game(){
             enemy_Pok.HP_drain(typeattack1.damage);
 
         }
-
         
         //sig attack
         if (attack_choice = 3) {
@@ -167,23 +162,62 @@ int game::start_game(){
         }
 
         
-
-    } //end attack section
-
-
-//work out how to do new enemy on cycle, if enemy HP is 0. Might do nested while loop, but will check Jadens properly
+        } //end attack section
 
 
+        //enemy attack
+        int enemy_attack_choice = 0;
+        //random number generator between 1 and 2
+
+        //Attack rateAttack2 = Attack();
+        chance2 = rateAttack2.success_rate();
+
+        //quick attack
+        if (enemy_atttack_choice = 1) {
+            QuickAttack quickattack2 = QuickAttack(chance2);
+            player_Pok.HP_drain(quickattack2.damage);
+            cout << "The enemy attacked you with " << quickattack2.damage << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl;
+        }
+
+        //type attack
+        if (enemy_atttack_choice = 2) {
+            TypeAttack typeattack2 = TypeAttack(chance2);
+            player_Pok.HP_drain(typeattack2.damage);
+            cout << "The enemy attacked you with " << typeattack2.damage << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl;
+        }
+
+            
+        //if player has lost
+        if (player_Pok.get_Pokemon_HP() <= 0) {
+        break;
+        }
+
+        if (enemy_Pok.get_Pokemon_HP() <=0) {
+            num_wins++;
+        }
+        }//end enemy while loop
+        
+    } //end player while loop
 
 
-    //if player has lost
-    if (player_Pok.get_Pokemon_HP() <= 0) {
-        cout << "You lose! You beat " << num_wins << "enemies. " << endl;
 
-        //save number of enemies beaten to text file
+//CHECK THAT YOU CAN REDFINE OBJECT E.G. POKEMONS ADN ATTACK EVEYR TIME YOU LOOP WITH SAME CONSTRUCTOR.
+
+
+
+
+
+    //player has lost as exited while loop
+
+    cout << "You lose! You beat " << num_wins << "enemies. " << endl;
+
+    //save number of enemies beaten to text file
+
+
+return 0;
+}
         
 
-    }
 
 
 
