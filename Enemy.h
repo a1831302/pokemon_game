@@ -14,27 +14,29 @@ class Enemy : public Pokemon {
     public:
         string enemy_name;
         int enemy_HP;
-        int enemy_move;
         string enemy_attack;
         string enemy_sig; 
         int enemy_type;
-        int enemy_strengths[3];
-        int enemy_weakness[2];
-
-        int num_enemies;
-        int num_enemies();
-        int num_enemies(int num_enemies);
-
+        int enemy_strength[3];
+        int enemy_weaknessess[2];
         
         Enemy();   // default constructor
-        Enemy(Pokemon new_enemy_Pokemon);   // constructor
+        Enemy(int enemy_PokemonID);   // constructor
 
-        int enemy_move();
         void set_pokemon(Pokemon new_enemy_Pokemon);   // used to set the pokemon the opponent has
         
         Pokemon get_pokemon();   // used to get the pokemon the opponent has
         void set_name();   //  opponents implementation of the Battler classes pure virtual function
-        
+
+        void print_enemy_info();   // Prints enemy's Pokemon info (name, HP, etc.)
+        void print_enemy_strengths_weaknesses();   // Prints strengths and weaknesses
+
+        // Getter methods
+        int get_enemy_HP();
+        int get_enemy_type();
+        string get_enemy_name();
+
+        int get_random_PokemonID();
 };
 
 #endif //ENEMY_H

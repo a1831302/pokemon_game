@@ -7,16 +7,53 @@
 
 using namespace std;
 
-// default constructor
-Enemy::Enemy(){
-    enemy_pokemon = Pokemon();
+
+// Constructor with randomized PokemonID
+Enemy::Enemy() : Pokemon(get_random_PokemonID()) {
+    enemy_name = this->name;  // Use inherited 'name' from Pokemon
+    enemy_HP = this->HP;      // Use inherited 'HP' from Pokemon
+    enemy_type = this->pokemon_type;  // Use inherited 'pokemon_type' from Pokemon
+    enemy_attack = this->attack;
+    enemy_sig = this->sig_attack;
+    enemy_strength[0] = this->strengths[0];
+    enemy_strength[1] = this->strengths[1];
+    enemy_strength[2] = this->strengths[2];
+    enemy_weaknessess[0] = this->weaknesses[0];
+    enemy_weaknessess[1] = this->weaknesses[1];
 }
 
-//NEED TO ADD A NUM ENEMY FUNCTION
+// Method to print enemy's Pokemon information
+void Enemy::print_enemy_info() {
+    cout << "Enemy Pokemon: " << enemy_name << endl;
+    cout << "HP: " << enemy_HP << endl;
+    cout << "Attack: " << enemy_attack << endl;
+    cout << "Signature Move: " << enemy_sig << endl;
+    cout << "Type: " << getTypeName(enemy_type) << endl;
+}
 
-// constructor
-Enemy::Enemy(Pokemon new_enemy_pokemon){
+// Method to print strengths and weaknesses
+void Enemy::print_enemy_strengths_weaknesses() {
+    cout << "Strengths: " << this->stringStrengths << endl;
+    cout << "Weaknesses: " << this->stringWeaknesses << endl;
+}
 
+// Getter for enemy HP
+int Enemy::get_enemy_HP() {
+    return enemy_HP;
+}
+
+// Getter for enemy type
+int Enemy::get_enemy_type() {
+    return enemy_type;
+}
+
+// Getter for enemy name
+string Enemy::get_enemy_name() {
+    return enemy_name;
+}
+
+// Function to generate random PokemonID
+int Enemy::get_random_PokemonID() {
     // Initialize a random number engine
     std::random_device dev;  
     std::mt19937 rng(dev()); 
@@ -27,19 +64,7 @@ Enemy::Enemy(Pokemon new_enemy_pokemon){
     // Generate a random number
     int choice = dist(rng);
 
-    Pokemon new_enemy_pokemon(choice);
-
-    //actually not too sure if this is needed. 
-    enemy_name = new_enemy_pokemon.name;
-    enemy_HP = new_enemy_pokemon.get_Pokemon_HP();
-    enemy_type = new_enemy_pokemon.type;
-    enemy_attack = new_enemy_pokemon.attack;
-    enemy_sig = new_enemy_pokemon.sig_attack; 
-    enemy_strengths[0] = new_enemy_pokemon.strengths[0];
-    enemy_strengths[1] = new_enemy_pokemon.strengths[1];
-    enemy_strengths[2] = new_enemy_pokemon.strengths[2];
-    enemy_weakness[0] = new_enemy_pokemon.weaknesses[0];
-    enemy_weakness[1] = new_enemy_pokemon.weaknesses[0];
+    return choice; // Generate random PokemonID
 }
 
 void Enemy::set_pokemon(Pokemon new_enemy_pokemon){enemy_pokemon = new_enemy_pokemon;}
@@ -80,26 +105,3 @@ void Enemy::set_name(){
 }
 
 
-int Enemy::enemy_move(){
-    // Initialize a random number engine
-    std::random_device dev;  
-    std::mt19937 rng(dev()); 
-
-    // Define the distribution range (e.g., between 1 and 100)
-    std::uniform_int_distribution<std::mt19937::result_type> dist(1, 2);
-
-    // Generate a random number
-    int move = dist(rng);
-    switch(move){
-        case 1:
-        case 2:
-        default:
-    };
-}
-
-int Enemy::num_enemies(){};
-
-int Enemy::num_enemies(int num_enemies){
-    num_enemies++;
-    return num_enemies;
-}

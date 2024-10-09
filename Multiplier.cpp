@@ -1,47 +1,39 @@
 #include <iostream>
 #include <string>
-#include <algorithm> // for std::fill
 #include "Pokemon.h"
-#include "Attack.h"
-#include "Enemy.h"
-#include "Player.h"
 #include "Multiplier.h"
-#include <random>
 
 using namespace std;
 
-
-//empty default constructor
+// Default constructor
 Multiplier::Multiplier() {}
-    
 
-
+// Constructor with pokemon_type
 Multiplier::Multiplier(int pokemon_type) {
-    
+    multiplier = 1; // Default multiplier
 
-    //looking for strength (so if a strength is the type of attack, then deals less damage)
-    for (int i = 0; i < 2; i++){
-        if (type = strength[i]){
-            multiplier = 0.5;
-        }
-        else{
-            multiplier = 1;
+    // Get the strengths and weaknesses of the current Pokemon
+    int* strengths = getStrengths();
+    int* weaknesses = getWeaknesses();
+
+    // Check if the attack type matches any of the strengths (deal less damage)
+    for (int i = 0; i < 3; ++i) {
+        if (strengths[i] != 0 && pokemon_type == strengths[i]) {
+            multiplier = 0.5;  // Less damage for strengths
+            cout << "The attack type matches a strength. Multiplier is set to 0.5" << endl;
+            return;  // Exit the loop since we found a match
         }
     }
 
-    //looking for weakness
-    for (int i = 0; i < 1; i++){
-        if (type = weaknessess[i]){
-            multiplier = 2;
-        }
-        else{
-            multiplier = 1;
+    // Check if the attack type matches any of the weaknesses (deal more damage)
+    for (int i = 0; i < 2; ++i) {
+        if (weaknesses[i] != 0 && pokemon_type == weaknesses[i]) {
+            multiplier = 2;  // More damage for weaknesses
+            cout << "The attack type matches a weakness. Multiplier is set to 2" << endl;
+            return;  // Exit the loop since we found a match
         }
     }
+
+    // If no match is found, multiplier remains 1
+    cout << "No strength or weakness match. Multiplier is set to 1" << endl;
 }
-
-
-
-
-
-

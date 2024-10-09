@@ -32,6 +32,9 @@ class Pokemon {
         int get_Pokemon_HP();
         void set_Pokemon_HP(int new_HP);
 
+        int* getStrengths();
+        int* getWeaknesses();
+        int getPokemonType();
     
 
 };
