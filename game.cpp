@@ -41,7 +41,7 @@ int game::start_game(){
     //Initialise medicines
     player_user_Pok.set_medicine_bag(3);
     player_user_Pok.add_medicine(1, potion("Panadol", 25));
-    player_user_Pok.add_medicine(2, potion("Neurofen", 50));
+    player_user_Pok.add_medicine(2, potion("Codeine", 50));
     player_user_Pok.add_medicine(3, potion("Morphine", 75));
 
 
