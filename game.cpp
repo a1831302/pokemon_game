@@ -9,6 +9,7 @@
 #include "SigAttack.h"
 #include "TypeAttack.h"
 #include "medicine.h"
+#include "Multiplier.h"
 
 
 #include <limits>
