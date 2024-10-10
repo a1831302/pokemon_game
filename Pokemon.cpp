@@ -14,9 +14,12 @@ Pokemon::Pokemon() {
     HP = 0;
     attack = "";
     sig_attack = "";
-    strengths[3] = {0,0,0}
+    strengths[0] = 0;
+    strengths[1] = 0;
+    strengths[2] = 0;
     stringStrengths = "";
-    weaknesses[2] = {0,0};
+    weaknesses[0] = 0;
+    weaknesses[1] = 0;
     stringWeaknesses = "";
     type = 0;
     num_hits = 0;
