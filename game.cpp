@@ -214,6 +214,8 @@ int start_game(){
 
     //save number of enemies beaten to text file
 
+    FileScore(num_wins);
+    
 
 return 0;
 }
