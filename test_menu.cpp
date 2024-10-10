@@ -9,7 +9,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-// Function to simulate getch() on Linux
+// Function to simulate getch()
 int _getch() {
     struct termios oldt, newt;
     int ch;
