@@ -10,17 +10,23 @@ int FileScore(int num_wins) {
     ofstream file;
 
     // Open the file in append mode
-    file.open(filename, ios::app);
+    file.open(filename);
 
     // Check if the file was opened successfully
     if (!file) {
         cerr << "Error: Unable to open file " << filename << endl;
         return 1;
     }
+    
+    int prev_best;
+    if (prev_best <= num_wins){
+        prev_best = num_wins;
+    }
 
     // Write to the file (appending content)
     file << "You have now lost!!\n";
-    file << "You scored" << num_wins << "\n";
+    file << "You scored: " << num_wins << "\n";
+    file << "Your previous best is: "<< prev_best << "\n";
 
     // Close the file
     file.close();
