@@ -7,6 +7,21 @@
 
 using namespace std;
 
+Pokemon::Pokemon() {
+    PokemonID = 0;
+    name = "";
+    pokemon_type = 0;
+    HP = 0;
+    attack = "";
+    sig_attack = "";
+    strengths[3] = {0,0,0}
+    stringStrengths = "";
+    weaknesses[2] = {0,0};
+    stringWeaknesses = "";
+    type = 0;
+    num_hits = 0;
+}
+
 Pokemon::Pokemon(int new_PokemonID) {
     ifstream file("pokemon.txt");
 
@@ -62,6 +77,8 @@ Pokemon::Pokemon(int new_PokemonID) {
     }
 
     file.close();
+
+    num_hits = 0;
 }
 
 // Function to convert type integer to string for strengths and weaknesses
