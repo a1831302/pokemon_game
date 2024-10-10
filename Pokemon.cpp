@@ -101,6 +101,7 @@ void Pokemon::print_Pokemon_info(int PokemonID) {
     cout << "SignatureMove: " << sig_attack << "\n";
     cout << "Strengths: " << stringStrengths << "\n";
     cout << "Weaknesses: " << stringWeaknesses << "\n";
+    cout << "\n";
 }
 
 //get function for strengths array
