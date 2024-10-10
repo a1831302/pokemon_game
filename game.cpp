@@ -63,7 +63,7 @@ int start_game(){
 
     while(player_Pok.get_Pokemon_HP() > 0) { 
         //rng to get random pokemon ID Pok_ID
-
+        Pok_ID = rand(1,8);
         
         //initiate pokemon and assign it to enemy. 
         Pokemon enemy_Pok = Pokemon(Pok_ID);
@@ -177,9 +177,8 @@ int start_game(){
 
 
         //enemy attack
-        int enemy_attack_choice = 0;
         //random number generator between 1 and 2
-
+        int enemy_attack_choice = rand(1,2);
         //Attack rateAttack2 = Attack();
         chance2 = rateAttack2.success_rate();
 
