@@ -26,7 +26,7 @@ int _getch() {
 // Menu options
 std::string mainMenu[] = {"Run", "Battle", "Heal"};
 std::string battleMenu[] = {"Signature", "Type", "Quick Attack"};
-std::string healMenu[] = {"High", "Medium", "Low"};
+std::string healMenu[] = {"Fentanyl", "Codeine", "Panadol"};
 
 int mainMenuSize = sizeof(mainMenu) / sizeof(mainMenu[0]);
 int battleMenuSize = sizeof(battleMenu) / sizeof(battleMenu[0]);
