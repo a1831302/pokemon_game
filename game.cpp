@@ -35,7 +35,15 @@ int start_game(){
     int num_wins = 0;
 
     //display first three available Pokemon stats, and get user to select from them and store in chosen_ID
+    //initiaie first 3 pokemon to print their info.
+    Pokemon Pok1 = Pokemon(1);
+    Pokemon Pok2 = Pokemon(2);
+    Pokemon Pok3 = Pokemon(3);
+    Pok1.print_Pokemon_info(1);
+    Pok2.print_Pokemon_info(2);
+    Pok3.print_Pokemon_info(3);
 
+    
 
     //initiate chosen pokemon and assign it to player
     Pokemon player_Pok = Pokemon(chosen_ID);
