@@ -23,6 +23,14 @@ int main() {
     return 0;
 }
 
+//output should be:
+//Name: Squirtle
+//etc, (all of Pokemon 1,2,3 info)
+//200
+//250
+//0
+//226
+
 
 
 
