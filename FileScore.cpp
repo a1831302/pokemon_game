@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main() {
+int FileScore(int num_wins) {
     string filename = "score.txt";  // Name of the file to write to
     ofstream file;
 
@@ -20,7 +20,7 @@ int main() {
 
     // Write to the file (appending content)
     file << "You have now lost!!\n";
-    file << "You scored" << num_enemies() << "\n";
+    file << "You scored" << num_wins << "\n";
 
     // Close the file
     file.close();
