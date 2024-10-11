@@ -10,12 +10,14 @@
 #include "TypeAttack.h"
 #include "medicine.h"
 #include "Multiplier.h"
+#include "Random.h"
 
 
 #include <limits>
 #include <algorithm>
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -58,16 +60,19 @@ int start_game(){
 
     //Initialise medicines
     player_user_Pok.set_medicine_bag(3);
-    player_user_Pok.add_medicine(1, potion("Panadol", 25));
-    player_user_Pok.add_medicine(2, potion("Codeine", 50));
-    player_user_Pok.add_medicine(3, potion("Morphine", 75));
+    player_user_Pok.add_medicine(1, medicine("Panadol", 25));
+    player_user_Pok.add_medicine(2, medicine("Codeine", 50));
+    player_user_Pok.add_medicine(3, medicine("Morphine", 75));
+
+    //
 
 
     cout << "It's time for your first battle!" << endl;
 
     while(player_Pok.get_Pokemon_HP() > 0) { 
         //rng to get random pokemon ID Pok_ID
-        Pok_ID = rand(1,8);
+        
+        Pok_ID = Random::rand(1,8);
         
         //initiate pokemon and assign it to enemy. 
         Pokemon enemy_Pok = Pokemon(Pok_ID);
