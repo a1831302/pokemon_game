@@ -17,7 +17,7 @@ public:
     int chance;
 
     //returns value (chance) between 1 and 100 to use for quick and type attacks
-    int success_rate();
+    static int success_rate();
 
     //constructor
     Attack(); 
@@ -27,6 +27,7 @@ public:
 
     //int set_numHits(int num_hits);
     //int get_numHits();
+
 
 };
 
