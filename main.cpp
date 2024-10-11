@@ -150,9 +150,9 @@ int main(){
             }
         }        
 
-        //use attack function success rate to find chance for future attack
-        Attack rateAttack = Attack();
-        chance = rateAttack.success_rate();
+        //use attack static function success rate to find chance for future attack
+        
+        chance = Attack::success_rate();
 
         //quick attack
         if (attack_choice = 1) {
@@ -187,9 +187,8 @@ int main(){
 
         //enemy attack
         //random number generator between 1 and 2
-        int enemy_attack_choice = rand(1,2);
-        //Attack rateAttack2 = Attack();
-        chance2 = rateAttack2.success_rate();
+        int enemy_attack_choice = Random::rand(1,2);
+        chance2 = Attack::success_rate();
 
         //quick attack
         if (enemy_atttack_choice = 1) {
