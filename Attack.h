@@ -8,8 +8,12 @@
 
 //Attack Pokemon class child class of Pokemon
 class Attack : public Pokemon{
+private:
+     //constructor - not used
+    Attack(); 
+
 public:
-    //int attack_used;
+    //variables that will be inherited to each specific attack class
     int damage;
     int attack_type;
     //bool hit_success;
@@ -19,11 +23,6 @@ public:
     //returns value (chance) between 1 and 100 to use for quick and type attacks
     static int success_rate();
 
-    //constructor
-    Attack(); 
-    //Attack(int attack_used);
-
-    //bool hit_success(int attack_used, bool hit_success);
 
     //int set_numHits(int num_hits);
     //int get_numHits();
