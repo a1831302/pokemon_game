@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>   // Required for random number generation
+#include "Random.h"
 
 
 int rand(int min, int max) {
