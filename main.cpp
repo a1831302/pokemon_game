@@ -21,7 +21,7 @@
 
 using namespace std;
 
-int start_game(){
+int main(){
     
     //game intro
     cout << "Welcome to Pokemon Battles!"<<"\n"
