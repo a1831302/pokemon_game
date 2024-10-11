@@ -45,7 +45,11 @@ int start_game(){
 
     
 
-    
+    //get player to choose ID
+    int chosen_ID;
+    cout << "Which pokemon woul dyou like - choose thier ID: ";
+    cin >> chosen_ID;
+    cout << endl;
 
     //initiate chosen pokemon and assign it to player
     Pokemon player_Pok = Pokemon(chosen_ID);
@@ -212,9 +216,7 @@ int start_game(){
 
 
 //CHECK THAT YOU CAN REDFINE OBJECT E.G. POKEMONS ADN ATTACK EVEYR TIME YOU LOOP WITH SAME CONSTRUCTOR.
-
-
-
+//
 
 
     //player has lost as exited while loop
