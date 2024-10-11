@@ -25,10 +25,7 @@ int Attack::success_rate() {
     return chance;
 }
 
-//still to do
-int Attack::HP_drain(int hp_deduct) {
 
-}
 
 
 
