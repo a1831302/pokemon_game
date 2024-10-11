@@ -25,12 +25,13 @@ int main(){
     
     //game intro
     cout << "Welcome to Pokemon Battles!"<<"\n"
-    << "The aim of the game is to defeat as many pokemons as you can." << "\n"
-    << "Your chosen Pokemon will have  HP, strengths and weaknesses." << "\n" 
-    << "HP is how much health your pokemon still has. There are 3 types of attack: quick attack deals 10 damage with 80% success rate, \n";
-    << "type attack deals 30 damage with 50% success rate, and the signature attack deals 70 damage, but requires you to have had 5 successful attacks. \n";
-    << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness. \n";
-    << "There also medicines avalible to increase your HP, and can be utilsied instead of an attack. \n";
+    cout << "The aim of the game is to defeat as many pokemons as you can." << "\n"
+    cout << "Your chosen Pokemon will have  HP, strengths and weaknesses." << "\n" 
+    cout << "HP is how much health your pokemon still has. There are 3 types of attack: quick attack deals 10 damage with 80% success rate, \n";
+    cout << "type attack deals 30 damage with 50% success rate, and the signature attack deals 70 damage, but requires you to have had 5 successful attacks. \n";
+    cout << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness. \n";
+    cout << "There also medicines avalible to increase your HP, and can be utilsied instead of an attack. \n";
+    cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n"
 
 
     //number of enemies beaten
