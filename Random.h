@@ -8,10 +8,12 @@ using namespace std;
 
 // Random class for static rng
 class Random : public Pokemon {
+  private:
+    //constructor - prvitae as never creating Random object, only used for static function
+    Random();
 
   public:
-    //constructor
-    Random();
+    
 
     static int rand(int min, int max);
 
