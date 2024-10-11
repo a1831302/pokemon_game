@@ -28,8 +28,6 @@ public:
     //int set_numHits(int num_hits);
     //int get_numHits();
 
-    //HP drain function
-    int HP_drain(int hp_deduct);
 };
 
 #endif
