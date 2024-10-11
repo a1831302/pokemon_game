@@ -49,7 +49,7 @@ int main(){
 
     //get player to choose ID
     int chosen_ID;
-    cout << "Which pokemon woul dyou like - choose thier ID: ";
+    cout << "Which pokemon would you like - choose thier ID: ";
     cin >> chosen_ID;
     cout << endl;
 
