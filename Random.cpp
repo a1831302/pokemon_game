@@ -2,8 +2,10 @@
 #include <random>   // Required for random number generation
 #include "Random.h"
 
+Random::Random() {
+};
 
-int rand(int min, int max) {
+int Random::rand(int min, int max) {
     // Initialize a random number engine
     std::random_device dev;  
     std::mt19937 rng(dev()); 
@@ -22,7 +24,7 @@ int rand(int min, int max) {
 //other random number generator function
 
 /*
-int rand(int offset, int range) {
+int Random::rand(int offset, int range) {
     //rand number with offset and range
     //range of 10 = 0 - 9
     //thus, offset = 1, range = 10 -> 1-10
