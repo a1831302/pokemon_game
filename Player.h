@@ -18,7 +18,7 @@ class Player : public Pokemon {
     public:
         Player();   // default constructor
         Player(Pokemon new_pokemon);   // constructor
-        Pokemon get_Pokemon();   // used to get the pokemon the player has
+        Pokemon get_pokemon();   // used to get the pokemon the player has
         void set_pokemon(Pokemon new_pokemon);    // used to set the pokemon the player has
         
 
