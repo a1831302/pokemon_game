@@ -12,7 +12,7 @@ Attack::Attack() {
     //empty default constructor
 }
 
-static int Attack::success_rate() {
+int Attack::success_rate() {
     // Initialize a random number engine
     std::random_device dev;  // Seed generator (for true random seed)
     std::mt19937 rng(dev()); // Mersenne Twister random number engine
