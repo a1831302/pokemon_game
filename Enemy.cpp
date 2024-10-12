@@ -38,10 +38,12 @@ void Enemy::print_enemy_info(enemy_Pokemon) {
 }
 
 // Method to print strengths and weaknesses
+/*
 void Enemy::print_enemy_strengths_weaknesses() {
     cout << "Strengths: " << this->stringStrengths << endl;
     cout << "Weaknesses: " << this->stringWeaknesses << endl;
 }
+*/
 
 // Getter for enemy HP
 int Enemy::get_enemy_HP() {
