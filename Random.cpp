@@ -5,7 +5,7 @@
 Random::Random() {
 };
 
-static int Random::rand(int min, int max) {
+int Random::rand(int min, int max) {
     // Initialize a random number engine
     std::random_device dev;  
     std::mt19937 rng(dev()); 
