@@ -138,7 +138,7 @@ int main(){
         int attack_choice = 0;   
         cout << "Pick an attack: " << endl;
         cout << "Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
-        cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << player_Pok.get_num_Hits() << "previous attacks. " << endl;
+        cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << player_Pok.get_num_hits() << "previous attacks. " << endl;
         cout << "Quick Attack(1), Type Attack(2), Signature Attack(3)" << endl;
 
         //again work out redraw functiona d highlighted text instead of 1,2,3
@@ -158,14 +158,14 @@ int main(){
         int chance = Attack::success_rate();
 
         //quick attack
-        if (attack_choice = 1) {
+        if (attack_choice == 1) {
             QuickAttack quickattack1 = QuickAttack(chance);
 
             enemy_Pok.HP_drain(quickattack1.damage);
         }
         
         //type attack
-        if (attack_choice = 2) {
+        if (attack_choice == 2) {
             TypeAttack typeattack1 = TypeAttack(chance);
 
             //multiplier function
@@ -175,7 +175,7 @@ int main(){
         }
         
         //sig attack
-        if (attack_choice = 3) {
+        if (attack_choice == 3) {
             SigAttack sigattack1 = SigAttack(player_Pok.get_num_hits());
 
             //multiplier function
@@ -194,14 +194,14 @@ int main(){
         int chance2 = Attack::success_rate();
 
         //quick attack
-        if (int enemy_atttack_choice = 1) {
+        if (int enemy_atttack_choice == 1) {
             QuickAttack quickattack2 = QuickAttack(chance2);
             player_Pok.HP_drain(quickattack2.damage);
             cout << "The enemy attacked you with " << quickattack2.damage << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl;
         }
 
         //type attack
-        if (int enemy_atttack_choice = 2) {
+        if (int enemy_atttack_choice == 2) {
             TypeAttack typeattack2 = TypeAttack(chance2);
             player_Pok.HP_drain(typeattack2.damage);
             cout << "The enemy attacked you with " << typeattack2.damage << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl;
