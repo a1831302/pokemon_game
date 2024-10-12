@@ -1,3 +1,6 @@
+#ifndef MEDICINE_H
+#define MEDICINE_H
+
 #include <iostream>
 #include <string>
 
@@ -13,3 +16,5 @@ class medicine {
     string getMedicineName();
     int getMedicineHealing();
 };
+
+#endif
