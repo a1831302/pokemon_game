@@ -23,7 +23,7 @@ class Enemy : public Pokemon {
         Enemy();   // default constructor
         Enemy(int enemy_PokemonID);   // constructor
 
-        void print_enemy_info(enemy_Pokemon);
+        //void print_enemy_info(enemy_Pokemon);
 
         void set_pokemon(Pokemon new_enemy_Pokemon);   // used to set the pokemon the opponent has
         
