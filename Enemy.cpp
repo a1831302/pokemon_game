@@ -9,7 +9,7 @@ using namespace std;
 
 
 // Default Constructor with randomized PokemonID
-Enemy::Enemy() : Pokemon(get_random_PokemonID()) {
+Enemy::Enemy() : Pokemon() {
     enemy_name = this->name;  // Use inherited 'name' from Pokemon
     enemy_HP = this->HP;      // Use inherited 'HP' from Pokemon
     enemy_type = this->pokemon_type;  // Use inherited 'pokemon_type' from Pokemon
