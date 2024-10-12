@@ -78,7 +78,7 @@ int main(){
         //initiate pokemon and assign it to enemy and display its information
         Pokemon enemy_Pok = Pokemon(Pok_ID);
         Enemy enemy_user_Pok = Enemy(enemy_Pok);
-        cout << "The enemy pokemon information is below: << endl;
+        cout << "The enemy pokemon information is below:" << endl;
         enemy_Pok.print_Pokemon_info(Pok_ID);
 
         
@@ -194,14 +194,14 @@ int main(){
         int chance2 = Attack::success_rate();
 
         //quick attack
-        if (int enemy_atttack_choice == 1) {
+        if (enemy_atttack_choice == 1) {
             QuickAttack quickattack2 = QuickAttack(chance2);
             player_Pok.HP_drain(quickattack2.damage);
             cout << "The enemy attacked you with " << quickattack2.damage << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl;
         }
 
         //type attack
-        if (int enemy_atttack_choice == 2) {
+        if (enemy_atttack_choice == 2) {
             TypeAttack typeattack2 = TypeAttack(chance2);
             player_Pok.HP_drain(typeattack2.damage);
             cout << "The enemy attacked you with " << typeattack2.damage << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl;
