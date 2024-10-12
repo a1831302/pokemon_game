@@ -21,7 +21,7 @@ class Enemy : public Pokemon {
         int enemy_weaknessess[2];
         
         Enemy();   // default constructor
-        Enemy(int enemy_PokemonID);   // constructor
+        Enemy(Pokemon enemy_Pok);   // constructor
 
         //void print_enemy_info(enemy_Pokemon);
 
