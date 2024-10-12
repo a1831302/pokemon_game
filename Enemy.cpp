@@ -29,6 +29,7 @@ Enemy::Enemy(Pokemon enemy_Pok) {
 }
 
 // Method to print enemy's Pokemon information
+/*
 void Enemy::print_enemy_info(enemy_Pokemon) {
     cout << "Enemy Pokemon: " << enemy_Pokemon.name << endl;
     cout << "HP: " << enemy_Pokemon.HP << endl;
@@ -36,14 +37,14 @@ void Enemy::print_enemy_info(enemy_Pokemon) {
     cout << "Signature Move: " << enemy_Pokemon.sig_attack << endl;
     cout << "Type: " << enemy_Pokemon.getTypeName() << endl;
 }
-
+*/
 // Method to print strengths and weaknesses
-/*
+
 void Enemy::print_enemy_strengths_weaknesses() {
     cout << "Strengths: " << this->stringStrengths << endl;
     cout << "Weaknesses: " << this->stringWeaknesses << endl;
 }
-*/
+
 
 // Getter for enemy HP
 int Enemy::get_enemy_HP() {
