@@ -8,7 +8,7 @@
 
 //Attack Pokemon class child class of Pokemon
 class Attack : public Pokemon{
-private:
+protected:
      //constructor - not used
     Attack(); 
 

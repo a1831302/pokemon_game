@@ -12,7 +12,7 @@ class SigAttack : public Attack{
 public:
     //constructors
     SigAttack();
-    sigAttack(int num_hits);
+    SigAttack(int num_hits);
 
     
 

@@ -24,14 +24,14 @@ using namespace std;
 int main(){
     
     //game intro
-    cout << "Welcome to Pokemon Battles!"<<"\n"
-    cout << "The aim of the game is to defeat as many pokemons as you can." << "\n"
-    cout << "Your chosen Pokemon will have  HP, strengths and weaknesses." << "\n" 
+    cout << "Welcome to Pokemon Battles!"<<"\n";
+    cout << "The aim of the game is to defeat as many pokemons as you can." << "\n";
+    cout << "Your chosen Pokemon will have  HP, strengths and weaknesses." << "\n" ;
     cout << "HP is how much health your pokemon still has. There are 3 types of attack: quick attack deals 10 damage with 80% success rate, \n";
     cout << "type attack deals 30 damage with 50% success rate, and the signature attack deals 70 damage, but requires you to have had 5 successful attacks. \n";
     cout << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness. \n";
     cout << "There also medicines avalible to increase your HP, and can be utilsied instead of an attack. \n";
-    cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n"
+    cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n";
 
 
     //number of enemies beaten
@@ -73,7 +73,7 @@ int main(){
     while(player_Pok.get_Pokemon_HP() > 0) { 
         //rng to get random pokemon ID Pok_ID
         
-        Pok_ID = Random::rand(1,8);
+        int Pok_ID = Random::rand(1,8);
         
         //initiate pokemon and assign it to enemy. 
         Pokemon enemy_Pok = Pokemon(Pok_ID);
@@ -153,7 +153,7 @@ int main(){
 
         //use attack static function success rate to find chance for future attack
         
-        chance = Attack::success_rate();
+        int chance = Attack::success_rate();
 
         //quick attack
         if (attack_choice = 1) {
@@ -189,17 +189,17 @@ int main(){
         //enemy attack
         //random number generator between 1 and 2
         int enemy_attack_choice = Random::rand(1,2);
-        chance2 = Attack::success_rate();
+        int chance2 = Attack::success_rate();
 
         //quick attack
-        if (enemy_atttack_choice = 1) {
+        if (int enemy_atttack_choice = 1) {
             QuickAttack quickattack2 = QuickAttack(chance2);
             player_Pok.HP_drain(quickattack2.damage);
             cout << "The enemy attacked you with " << quickattack2.damage << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl;
         }
 
         //type attack
-        if (enemy_atttack_choice = 2) {
+        if (int enemy_atttack_choice = 2) {
             TypeAttack typeattack2 = TypeAttack(chance2);
             player_Pok.HP_drain(typeattack2.damage);
             cout << "The enemy attacked you with " << typeattack2.damage << " damage. Your HP is now " << player_Pok.get_Pokemon_HP() << endl;
@@ -236,7 +236,7 @@ int main(){
 
     if (!scoreIn) {
         cerr << "Error: Unable to open file " << endl;
-        return;
+        return 0;
     }
     string line;
     int previousBest;
@@ -260,20 +260,20 @@ int main(){
 
     ofstream scoreOut("score.txt");
     //update
-    if (currentScore > previousBest) {
-        previousBest = currentScore;
+    if (num_wins > previousBest) {
+        previousBest = num_wins;
     }    
 
     //check if the file was opened
     if (!scoreOut) {
         cerr << "Error: Unable to open file " << endl;
-        return;
+        return 0;
     }
     
     
     if (scoreOut.is_open()) {
         scoreOut << "You have now lost!!" << endl;
-        scoreOut << "You scored: " << currentScore << endl;
+        scoreOut << "You scored: " << num_wins << endl;
         scoreOut << "Your previous best is: " << previousBest << endl;
         scoreOut.close();
     }

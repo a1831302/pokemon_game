@@ -9,7 +9,7 @@
 
 using namespace std;
 
-QuickAttack::QuickAttack() {};
+QuickAttack::QuickAttack() {}
 
 QuickAttack::QuickAttack(int chance) {
     cout << name << " used quick attack!" << endl;

@@ -13,7 +13,7 @@ SigAttack::SigAttack() {
     //empty
 }
 
-SigAttack::SigAttack(num_hits) {
+SigAttack::SigAttack(int num_hits) {
     
         if (num_hits > 4){ //5 hits
             attack_type = pokemon_type; // pokemon type
