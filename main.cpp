@@ -75,9 +75,11 @@ int main(){
         
         int Pok_ID = Random::rand(1,8);
         
-        //initiate pokemon and assign it to enemy. 
+        //initiate pokemon and assign it to enemy and display its information
         Pokemon enemy_Pok = Pokemon(Pok_ID);
         Enemy enemy_user_Pok = Enemy(enemy_Pok);
+        cout << "The enemy pokemon information is below: << endl;
+        enemy_Pok.print_Pokemon_info(Pok_ID);
 
         
         while (enemy_Pok.get_Pokemon_HP() > 0){
