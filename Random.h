@@ -2,6 +2,7 @@
 #define RANDOM_H
 #include <iostream>
 #include <string>
+#include "Pokemon.h"
 
 
 using namespace std;
