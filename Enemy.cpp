@@ -90,7 +90,7 @@ void Enemy::set_name(){
     cout << "1 - Sachin" << endl;
     cout << "2 - Kevin" << endl;
     cout << "3 - Seb" << endl;
-    while (valid_choice = 0) {
+    while (valid_choice == 0) {
     int choice;
     cin >> choice;
     
