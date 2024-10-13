@@ -173,7 +173,7 @@ int main(){
             QuickAttack quickattack1 = QuickAttack(chance, player_Pok);
 
             if (quickattack1.damage > 0) {
-                player_Pok.inc_num_hits(pok.get_num_hits());
+                player_Pok.inc_num_hits(player_Pok.get_num_hits());
             }
 
             enemy_Pok.HP_drain(quickattack1.damage);
@@ -184,7 +184,7 @@ int main(){
             TypeAttack typeattack1 = TypeAttack(chance, player_Pok);
 
             if (typeattack1.damage > 0) {
-                player_Pok.inc_num_hits(pok.get_num_hits());
+                player_Pok.inc_num_hits(player_Pok.get_num_hits());
             }
             //multiplier function
                 
@@ -196,6 +196,7 @@ int main(){
         if (attack_choice == 3) {
             SigAttack sigattack1 = SigAttack(player_Pok.get_num_hits(), player_Pok);
 
+            player_Pok.set_num_hits(0);
             //multiplier function
                 
             enemy_Pok.HP_drain(sigattack1.damage);
