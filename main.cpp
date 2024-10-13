@@ -49,10 +49,14 @@ int main(){
     
 
     //get player to choose ID
-    int chosen_ID;
-    cout << "Which pokemon would you like - choose thier ID: ";
+    int chosen_ID = 0;
+    cout << "Which pokemon would you like - input their ID: ";
     cin >> chosen_ID;
     cout << endl;
+    while (chosen_ID != 1 && chosen_ID != 2 && chosen_ID != 3) {
+        cout << "Invalid input, try again: 
+        cin >> chosen_ID;
+    }
 
     //initiate chosen pokemon and assign it to player
     Pokemon player_Pok = Pokemon(chosen_ID);
