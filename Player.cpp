@@ -16,10 +16,6 @@ Player::Player(Pokemon new_pokemon){
     num_hits = 0;
 }
 
-//used to get numbr of hits so far
-int Player::get_num_hits(){
-    return num_hits;
-}
 
 // used to get the pokemon the player has
 Pokemon Player::get_pokemon(){
