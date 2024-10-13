@@ -54,7 +54,7 @@ int main(){
     cin >> chosen_ID;
     cout << endl;
     while (chosen_ID != 1 && chosen_ID != 2 && chosen_ID != 3) {
-        cout << "Invalid input, try again: 
+        cout << "Invalid input, try again: ";
         cin >> chosen_ID;
     }
 
