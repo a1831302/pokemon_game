@@ -84,31 +84,32 @@ Pokemon Enemy::get_pokemon(){
 }
 
 //  enemy implementation of the Battler classes pure virtual function
-void Enemy::set_name(){
-    bool valid_choice = 0; //to show error if player doesn't pick valid choice
-    cout << "Which AI do you want to verse first?" << endl;
-    cout << "1 - Sachin" << endl;
-    cout << "2 - Kevin" << endl;
-    cout << "3 - Seb" << endl;
-    while (valid_choice == 0) {
-    int choice;
-    cin >> choice;
+void Enemy::set_name(Pokemon enemy_Pokemon){
+    int enemy_choice = 0
+    cout << "Which Enemy do you want to verse first? Seb has an extra 20 HP for his first pokemon, and Sachin has an extra 40. " << endl;
+    cout << "1 - Kevin (easy)" << endl;
+    cout << "2 - Seb (medium)" << endl;
+    cout << "3 - Sachin (hard)" << endl;
+    while (enemy_choice != 0) {
+    cin >> enemy_choice;
     
     // sets the enemy name to the chosen AI name
     if(choice == 1){
-        name = "Sachin";
-        valid_choice = 1;
+        enemy_Pokemon.name = "Kevin";
+
     }
     else if (choice == 2){
-        name = "Kevin";
-        valid_choice = 1;
+        enemy_Pokemon.name = "Seb";
+        int new_HP = enemy_Pokemon.get_Pokemon_HP + 20;
+        enemy_Pokemon.set_Pokemon_HP(new_HP);
     }
     else if (choice == 3){
-        name = "Seb";
-        valid_choice = 1;
+        enemy_Pokemon.name = "Sachin";
+        int new_HP = enemy_Pokemon.get_Pokemon_HP + 40;
+        enemy_Pokemon.set_Pokemon_HP(new_HP);
     }
     else {
-        cout << "Error - please pick 1, 2 or 3." << endl;
+        cout << "Error - please pick 1, 2 or 3: ";
     }
 }
 }
