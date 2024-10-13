@@ -112,7 +112,7 @@ int main(){
         Enemy enemy_user_Pok = Enemy(enemy_Pok);
 
         enemy_user_Pok.set_name(enemy_Pok);
-        enemy_Pok.HP = enemy_user_Pok.HP;
+        enemy_Pok.HP = enemy_user_Pok.HP + enemy_Pok.HP; // add 0, 20 or 40 to current enemy HP based on choice
         enemy_Pok.name = enemy_user_Pok.name;
         
         cout << "The new enemy pokemon information is below:" << endl;
