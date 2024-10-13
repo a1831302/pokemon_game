@@ -29,8 +29,8 @@ int main(){
     cout << "HP is how much health your pokemon still has. There are 3 types of attack: quick attack deals 10 damage with 80% success rate, \n";
     cout << "type attack deals 30 damage with 50% success rate, and the signature attack deals 70 damage, but requires \n";
     cout << "you to have had 5 successful attacks. \n";
-    cout << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness. \n";
-    cout << "There also medicines avalible to increase your HP, and can be utilsied instead of an attack. \n";
+    cout << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness of the enemy's. \n";
+    cout << "There also medicines availible to increase your HP, and can be utilised instead of an attack. \n";
     cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n";
 
 
