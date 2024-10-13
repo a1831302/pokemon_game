@@ -88,6 +88,14 @@ int main(){
         cout << "The new enemy pokemon information is below:" << endl;
         enemy_Pok.print_Pokemon_info(Pok_ID);
 
+        cout << "For this enemy pokemon: " << endl;
+        //multiplier function
+        Multiplier mult = Multiplier();
+
+        double multiplier;
+        multiplier = mult.find_mult(player_Pok, enemy_Pok);
+
+
         
         while (enemy_Pok.get_Pokemon_HP() > 0){
         cout << "Currently, your HP is: " << player_Pok.get_Pokemon_HP() << "\nThe Enemy's HP is: " << enemy_Pok.get_Pokemon_HP() << endl;
@@ -177,13 +185,7 @@ int main(){
                 player_Pok.inc_num_hits(player_Pok.get_num_hits());
             }
 
-            //multiplier function
-            Multiplier multQ = Multiplier();
-
-            double qmultiplier;
-            qmultiplier = multQ.find_mult(player_Pok, enemy_Pok);
-
-            quickattack1.damage = qmultiplier * quickattack1.damage;
+            quickattack1.damage = multiplier * quickattack1.damage;
             
             enemy_Pok.HP_drain(quickattack1.damage);
             cout << "You attacked the enemy with " << quickattack1.damage << " damage." << endl;
@@ -196,13 +198,9 @@ int main(){
             if (typeattack1.damage > 0) {
                 player_Pok.inc_num_hits(player_Pok.get_num_hits());
             }
-            //multiplier function
-            Multiplier multT = Multiplier();
+            
 
-            double tmultiplier;
-            tmultiplier = multT.find_mult(player_Pok, enemy_Pok);
-
-            typeattack1.damage = tmultiplier * typeattack1.damage;
+            typeattack1.damage = multiplier * typeattack1.damage;
                 
             enemy_Pok.HP_drain(typeattack1.damage);
             cout << "You attacked the enemy with " << typeattack1.damage << " damage." << endl;
@@ -215,6 +213,7 @@ int main(){
 
             player_Pok.set_num_hits(0);
             //multiplier function
+            sigattack1.damage = multiplier * sigaattack1.damage;
                 
             enemy_Pok.HP_drain(sigattack1.damage);
             if (sigattack1.damage > 0) {
