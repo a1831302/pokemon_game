@@ -29,7 +29,7 @@ class Player : public Pokemon {
         medicine* get_medicine_bag_pointer();   // returns medicine_bag
         int get_medicine_count();   // returns medicine count
         
-        //void set_name();   // player implementation of Battlers pure virtual function
+        //void set_name();   
 };
 
 #endif //PLAYER_H
