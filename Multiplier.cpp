@@ -21,7 +21,7 @@ double Multiplier::find_mult(Pokemon pok1, Pokemon pok2) {
     for (int i = 0; i < 3; ++i) {
         if (strengths[i] != 0 && pok1.pokemon_type == strengths[i]) {
             multiplier = 0.5;  // Less damage for strengths
-            cout << "The attack type matches a strength. Multiplier is set to 0.5" << endl;
+            cout << "The attack type matches the enemy's strength. Multiplier is set to 0.5" << endl;
             return multiplier;
         }
     }
@@ -30,7 +30,7 @@ double Multiplier::find_mult(Pokemon pok1, Pokemon pok2) {
     for (int i = 0; i < 2; ++i) {
         if (weaknesses[i] != 0 && pok1.pokemon_type == weaknesses[i]) {
             multiplier = 2;  // More damage for weaknesses
-            cout << "The attack type matches a weakness. Multiplier is set to 2" << endl;
+            cout << "The attack type matches the enemy's weakness. Multiplier is set to 2" << endl;
             return multiplier;  // Exit the loop since we found a match
         }
     }
