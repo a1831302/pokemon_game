@@ -32,11 +32,12 @@ int main(){
     cout << "There also medicines availible to increase your HP, and can be utilised instead of an attack. \n";
     cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n \n \n";
 
-    cout << "Enter any key to continue - note the information above will be cleared: ";
+    cout << "Enter any key (except 0) to continue - note the information above will be cleared. ";
     string cont;
     cin >> cont;
     system("clear");
     if (cont == "0") {
+        system("clear");
         cout << "Game exited. " << endl;
         return 0;
     }
@@ -64,9 +65,19 @@ int main(){
     cout << "Which pokemon would you like - input their ID: ";
     cin >> chosen_ID;
     cout << endl;
+    if (chosen_ID == 0) {
+        system("clear");
+        cout << "Game exited. " << endl;
+        return 0;
+    }
     while (chosen_ID != 1 && chosen_ID != 2 && chosen_ID != 3) {
         cout << "Invalid input, try again: ";
         cin >> chosen_ID;
+        if (chosen_ID == 0) {
+            system("clear");
+            cout << "Game exited. " << endl;
+            return 0;
+        }
     }
 
     system("clear");
@@ -121,11 +132,17 @@ int main(){
         else {
             cout << "Would you like to attack(1) or use a medicine(2)?: ";
             cin >> choice;
+            if (choice == 0) {
+                system("clear");
+                cout << "Game exited. " << endl;
+                return 0;
+            }
         }
         if(choice != 1 && choice != 2){
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input.  Try again: ";
+
         }
         }
 
@@ -138,6 +155,11 @@ int main(){
             }
             while(medicine_choice <=0 || medicine_choice > player_user_Pok.get_medicine_count()){
                 cin >> medicine_choice;
+                if (medicine_choice == 0) {
+                    system("clear");
+                    cout << "Game exited. " << endl;
+                    return 0;
+                }
                 if(medicine_choice <=0 || medicine_choice > player_user_Pok.get_medicine_count()){
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -160,7 +182,7 @@ int main(){
 
     //chosen attack
     if (choice == 1) {
-        int attack_choice = 0;   
+        int attack_choice = 4;   
         cout << "Pick an attack: " << endl;
         if (num_attacks == 0) {
         cout << "Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
@@ -171,15 +193,25 @@ int main(){
         cout << "Quick Attack(1), Type Attack(2), Signature Attack(3)" << endl;
         
 
-        //again work out redraw function and highlighted text instead of 1,2,3
-        while(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
+        if(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
             cout<< "Select move: ";
             cin >> attack_choice;
             cout << endl;
-            if(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
+                if (attack_choice == 0) {
+                    system("clear");
+                    cout << "Game exited. " << endl;
+                    return 0;
+                }
+            while(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "Invalid input.  Try again: ";
+                cin >> attack_choice;
+                if (attack_choice == 0) {
+                    system("clear");
+                    cout << "Game exited. " << endl;
+                    return 0;
+                }
             }
         }        
 
@@ -257,9 +289,13 @@ int main(){
             cout << "The enemy attacked you with " << typeattack2.damage << " damage." << endl;
         }
 
-        cout << "Enter any key to continue - note the information above will be cleared: ";
+        cout << "Enter any key (except 0) to continue - note the information above will be cleared: ";
         string conti;
         cin >> conti;
+        if (conti == "0") {
+            cout << "Game exited. " << endl;
+            return 0;
+        }
         system("clear");
             
         //if player has lost
