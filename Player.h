@@ -20,6 +20,8 @@ class Player : public Pokemon {
         Player(Pokemon new_pokemon);   // constructor
         Pokemon get_pokemon();   // used to get the pokemon the player has
         void set_pokemon(Pokemon new_pokemon);    // used to set the pokemon the player has
+        int num_hits;
+        int get_num_hits();
         
 
         void set_medicine_bag(int num_medicines);   // creates an empty potion_bag of a certain length
