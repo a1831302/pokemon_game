@@ -146,9 +146,10 @@ int main(){
         cout << "Pick an attack: " << endl;
         if (num_attacks == 0) {
         cout << "Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
-        cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << player_Pok.get_num_hits() << " previous attacks. " << endl;
+        cout << "Signature attack does 70 damage, but requires five successful previous attacks. " << endl;
         num_attacks++;
         }
+        cout << "Currently, you have " << player_Pok.get_num_hits() << " previous attacks. " << endl;
         cout << "Quick Attack(1), Type Attack(2), Signature Attack(3)" << endl;
         
 
@@ -183,8 +184,9 @@ int main(){
             qmultiplier = multQ.find_mult(player_Pok, enemy_Pok);
 
             quickattack1.damage = qmultiplier * quickattack1.damage;
-
+            
             enemy_Pok.HP_drain(quickattack1.damage);
+            cout << "You attacked the enemy with " << quickattack1.damage << " damage." << endl;
         }
         
         //type attack
@@ -203,6 +205,7 @@ int main(){
             typeattack1.damage = tmultiplier * typeattack1.damage;
                 
             enemy_Pok.HP_drain(typeattack1.damage);
+            cout << "You attacked the enemy with " << typeattack1.damage << " damage." << endl;
 
         }
         
@@ -214,7 +217,9 @@ int main(){
             //multiplier function
                 
             enemy_Pok.HP_drain(sigattack1.damage);
-
+            if (sigattack1.damage > 0) {
+            cout << "You attacked the enemy with " << sigattack1.damage << " damage." << endl;
+            }
         }
 
         
