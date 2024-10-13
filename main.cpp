@@ -139,7 +139,7 @@ int main(){
         int attack_choice = 0;   
         int num_attacks = 0;
         cout << "Pick an attack: " << endl;
-        if (num_attacks = 0) {
+        if (num_attacks == 0) {
         cout << "Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
         cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << player_Pok.get_num_hits() << " previous attacks. " << endl;
         }
@@ -164,14 +164,14 @@ int main(){
 
         //quick attack
         if (attack_choice == 1) {
-            QuickAttack quickattack1 = QuickAttack(chance);
+            QuickAttack quickattack1 = QuickAttack(chance, player_Pok);
 
             enemy_Pok.HP_drain(quickattack1.damage);
         }
         
         //type attack
         if (attack_choice == 2) {
-            TypeAttack typeattack1 = TypeAttack(chance);
+            TypeAttack typeattack1 = TypeAttack(chance, player_Pok);
 
             //multiplier function
                 
@@ -181,7 +181,7 @@ int main(){
         
         //sig attack
         if (attack_choice == 3) {
-            SigAttack sigattack1 = SigAttack(player_Pok.get_num_hits());
+            SigAttack sigattack1 = SigAttack(player_Pok.get_num_hits(), player_Pok);
 
             //multiplier function
                 
