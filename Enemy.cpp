@@ -85,27 +85,28 @@ Pokemon Enemy::get_pokemon(){
 
 //  enemy implementation of the Battler classes pure virtual function
 void Enemy::set_name(Pokemon pok){
-    enemy_choice = 4;
+    string enemy_choice = "";
     cout << "Which Enemy do you want to verse first? Seb has an extra 20 HP for his first pokemon, and Sachin has an extra 40. " << endl;
     cout << "1 - Kevin (easy)" << endl;
     cout << "2 - Seb (medium)" << endl;
     cout << "3 - Sachin (hard)" << endl;
     
-    while (enemy_choice != 1 && enemy_choice != 2 && enemy_choice != 3) {
+    while (enemy_choice != "1" && enemy_choice != "2" && enemy_choice != "3") {
     cin >> enemy_choice;
     // sets the enemy name to the chosen name
-    if(enemy_choice == 1){
+    if(enemy_choice == "1"){
         name = "Kevin";
     }
-    else if (enemy_choice == 2){
+    else if (enemy_choice == "2"){
         name = "Seb";
         HP = HP + 20;
     }
-    else if (enemy_choice == 3){
+    else if (enemy_choice == "3"){
         name = "Sachin";
         HP = 40;
     }
-    else if (enemy_choice == 0) {
+    else if (enemy_choice == "0") {
+        name = "0";
         break;
     }
     else {
