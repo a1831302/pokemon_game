@@ -10,12 +10,13 @@
 
 class Multiplier : public Pokemon{
 public:
-    int multiplier;
+    double multiplier;
     
     Multiplier() ;
     
-    Multiplier(Pokemon pok1, Pokemon pok2, int pokemon_type);
+    //Multiplier(Pokemon pok1, Pokemon pok2);
 
+    double find_mult(Pokemon pok1, Pokemon pok2);
 };
 
 #endif
