@@ -28,7 +28,8 @@ int main(){
     cout << "The aim of the game is to defeat as many pokemons as you can." << "\n";
     cout << "Your chosen Pokemon will have  HP, strengths and weaknesses." << "\n" ;
     cout << "HP is how much health your pokemon still has. There are 3 types of attack: quick attack deals 10 damage with 80% success rate, \n";
-    cout << "type attack deals 30 damage with 50% success rate, and the signature attack deals 70 damage, but requires you to have had 5 successful attacks. \n";
+    cout << "type attack deals 30 damage with 50% success rate, and the signature attack deals 70 damage, but requires \n";
+    cout << "you to have had 5 successful attacks. \n";
     cout << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness. \n";
     cout << "There also medicines avalible to increase your HP, and can be utilsied instead of an attack. \n";
     cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n";
@@ -78,12 +79,12 @@ int main(){
         //initiate pokemon and assign it to enemy and display its information
         Pokemon enemy_Pok = Pokemon(Pok_ID);
         Enemy enemy_user_Pok = Enemy(enemy_Pok);
-        cout << "The enemy pokemon information is below:" << endl;
+        cout << "The new enemy pokemon information is below:" << endl;
         enemy_Pok.print_Pokemon_info(Pok_ID);
 
         
         while (enemy_Pok.get_Pokemon_HP() > 0){
-        cout << "Currently, your HP is: " << player_Pok.get_Pokemon_HP() << "\n The Enemy's HP is: " << enemy_Pok.get_Pokemon_HP() << endl;
+        cout << "Currently, your HP is: " << player_Pok.get_Pokemon_HP() << "\nThe Enemy's HP is: " << enemy_Pok.get_Pokemon_HP() << endl;
         //ask user if they would like to use a medicine or attack
         //either 1 or 2 or do it like highlighted text etc
         int choice = 0;;
@@ -94,7 +95,7 @@ int main(){
             choice = 1;
         } 
         else {
-            cout << "Would you like to attack(1) or use a medicine(2)?:" << endl;
+            cout << "Would you like to attack(1) or use a medicine(2)?: ";
             cin >> choice;
         }
         if(choice != 1 && choice != 2){
@@ -138,12 +139,12 @@ int main(){
         int attack_choice = 0;   
         cout << "Pick an attack: " << endl;
         cout << "Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
-        cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << player_Pok.get_num_hits() << "previous attacks. " << endl;
+        cout << "Signature attack does 70 damage, but requires five successful previous attacks. Currently, you have " << player_Pok.get_num_hits() << " previous attacks. " << endl;
         cout << "Quick Attack(1), Type Attack(2), Signature Attack(3)" << endl;
 
         //again work out redraw functiona d highlighted text instead of 1,2,3
         while(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
-            cout<< "Select move:";
+            cout<< "Select move: ";
             cin >> attack_choice;
             cout << endl;
             if(attack_choice !=1 && attack_choice != 2 && attack_choice !=3){
@@ -215,20 +216,16 @@ int main(){
 
         if (enemy_Pok.get_Pokemon_HP() <=0) {
             num_wins++;
+            cout << "You beat " << enemy_Pok.name << "! \n";
         }
         }//end enemy while loop
         
     } //end player while loop
 
 
-
-//CHECK THAT YOU CAN REDFINE OBJECT E.G. POKEMONS ADN ATTACK EVEYR TIME YOU LOOP WITH SAME CONSTRUCTOR.
-//
-
-
     //player has lost as exited while loop
 
-    cout << "You lose! You beat " << num_wins << "enemies. " << endl;
+    cout << "You lose! You beat " << num_wins << " enemies. " << endl;
 
     //save number of enemies beaten to text file - DO WE NEED ALL OF THIS BELOW?
 
