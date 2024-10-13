@@ -12,7 +12,7 @@ class TypeAttack : public Attack{
 public:
     //constructor
     TypeAttack();
-    TypeAttack(int chance);
+    TypeAttack(int chance, Pokemon pok);
     
 
 
