@@ -7,11 +7,18 @@ using namespace std;
 // default constructor
 Player::Player(){
     player_pokemon = Pokemon();
+    num_hits = 0;
 };
 
 // constructor
 Player::Player(Pokemon new_pokemon){
     player_pokemon = new_pokemon;
+    num_hits = 0;
+}
+
+//used to get numbr of hits so far
+int Player::get_num_hits(){
+    return num_hits;
 }
 
 // used to get the pokemon the player has
