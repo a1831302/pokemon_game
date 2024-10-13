@@ -200,7 +200,7 @@ int main(){
             double tmultiplier;
             tmultiplier = multT.find_mult(player_Pok, enemy_Pok);
 
-            quickattack1.damage = tmultiplier * quickattack1.damage;
+            typeattack1.damage = tmultiplier * typeattack1.damage;
                 
             enemy_Pok.HP_drain(typeattack1.damage);
 
