@@ -22,6 +22,7 @@ SigAttack::SigAttack(int num_hits, Pokemon pok) {
             cout << pok.name << " used signature attack!" << endl;
         } else {
             cout << "Signature is not ready. Try Again: " << endl;
+            damage = 0;
         }
 }
 
