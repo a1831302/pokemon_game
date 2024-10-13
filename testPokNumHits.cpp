@@ -16,3 +16,10 @@ int main() {
 
     return 0;
 }
+
+/*
+output should be:
+0
+1
+*/
+
