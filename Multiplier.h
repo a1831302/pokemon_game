@@ -14,7 +14,7 @@ public:
     
     Multiplier() ;
     
-    Multiplier(int pokemon_type);
+    Multiplier(Pokemon pok1, Pokemon pok2, int pokemon_type);
 
 };
 
