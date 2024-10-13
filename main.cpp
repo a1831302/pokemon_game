@@ -1,6 +1,4 @@
-
-
-
+//main file
 #include "Pokemon.h"
 #include "Player.h"
 #include "Enemy.h"
@@ -32,8 +30,13 @@ int main(){
     cout << "you to have had 5 successful attacks. \n";
     cout << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness of the enemy's. \n";
     cout << "There also medicines availible to increase your HP, and can be utilised instead of an attack. \n";
-    cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n";
+    cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n \n \n";
 
+    cout << "Enter any key to continue - note the information above will be cleared: ";
+    string cont;
+    cin >> cont;
+    system("clear");
+    
 
     //number of enemies beaten
     int num_wins = 0;
@@ -61,6 +64,8 @@ int main(){
         cout << "Invalid input, try again: ";
         cin >> chosen_ID;
     }
+
+    system("clear");
 
     //initiate chosen pokemon and assign it to player
     Pokemon player_Pok = Pokemon(chosen_ID);
@@ -245,6 +250,7 @@ int main(){
             cout << "The enemy attacked you with " << typeattack2.damage << " damage." << endl;
         }
 
+        system("clear");
             
         //if player has lost
         if (player_Pok.get_Pokemon_HP() <= 0) {
