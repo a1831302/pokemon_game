@@ -87,7 +87,7 @@ int main(){
     Player player_user_Pok = Player(player_Pok);
 
     player_user_Pok.set_name(); //base class Pokemon implementation of naming function (virtual)
-    
+    player_Pok.name = player_user_Pok.name;
     
 
     
