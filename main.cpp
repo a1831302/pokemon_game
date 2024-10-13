@@ -42,8 +42,11 @@ int main(){
     Pokemon Pok1 = Pokemon(1);
     Pokemon Pok2 = Pokemon(2);
     Pokemon Pok3 = Pokemon(3);
+    cout << "Pokemon ID: 1 \n";
     Pok1.print_Pokemon_info(1);
+    cout << "Pokemon ID: 2 \n";
     Pok2.print_Pokemon_info(2);
+    cout << "Pokemon ID: 3 \n";
     Pok3.print_Pokemon_info(3);
 
     
