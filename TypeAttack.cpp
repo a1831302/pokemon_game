@@ -15,7 +15,7 @@ TypeAttack::TypeAttack(int chance, Pokemon pok) {
         if (chance < 50){ //50% chance of missing
             attack_type = pok.pokemon_type; // pokemon type
             damage = 30;
-            pok.set_num_hits(pok.get_num_hits());
+            pok.inc_num_hits(pok.get_num_hits());
         } else {
             cout << pok.name << "'s type attack missed!" << endl;
             damage = 0;
