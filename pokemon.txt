@@ -1,8 +1,8 @@
-1 Squirtle 120 2 Water_Gun Hydro_Pump 1 0 0 6 4
-2 Bulbasaur 120 4 Vine_Whip Solar_Beam 2 3 0 1 0
-3 Charmander 120 1 Ember Flamethrower 4 0 0 3 2
-4 Pikachu 120 6 Thunder_Shock Thunder 2 0 0 3 0
-5 Machop 200 9 Karate_Chop Seismic_Toss 5 0 0 0 0
-6 Rattata 200 5 Tail_Whip Super_Fang 0 0 0 9 0
+1 Squirtle 100 2 Water_Gun Hydro_Pump 1 0 0 6 4
+2 Bulbasaur 100 4 Vine_Whip Solar_Beam 2 3 0 1 0
+3 Charmander 100 1 Ember Flamethrower 4 0 0 3 2
+4 Pikachu 100 6 Thunder_Shock Thunder 2 0 0 3 0
+5 Machop 180 9 Karate_Chop Seismic_Toss 5 0 0 0 0
+6 Rattata 180 5 Tail_Whip Super_Fang 0 0 0 9 0
 7 Sandshrew 150 3 Sand_Attack Fury_Swipes 6 1 0 2 4
-8 Dragonite 500 10 Slam Dragon_Rage 4 1 2 0 0
+8 Dragonite 400 10 Slam Dragon_Rage 4 1 2 0 0
