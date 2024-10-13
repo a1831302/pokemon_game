@@ -42,7 +42,8 @@ class Pokemon {
         int getPokemonType();
 
         void HP_drain(int damage);
-    
+
+        virtual void set_name();
 
 };
 
