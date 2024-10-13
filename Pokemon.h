@@ -28,7 +28,7 @@ class Pokemon {
         void print_Pokemon_info(int PokemonID);
 
         string getTypeName(int type);
-        int get_num_hits();
+        
         int get_Pokemon_HP();
         void set_Pokemon_HP(int new_HP);
 
