@@ -36,6 +36,10 @@ int main(){
     string cont;
     cin >> cont;
     system("clear");
+    if (cont == "0") {
+        cout << "Game exited. " << endl;
+        return 0;
+    }
     
 
     //number of enemies beaten
