@@ -86,7 +86,11 @@ int main(){
     Pokemon player_Pok = Pokemon(chosen_ID);
     Player player_user_Pok = Player(player_Pok);
 
+    player_user_Pok.set_name(); //base class Pokemon implementation of naming function (virtual)
+    
+    
 
+    
     //Initialise medicines
     player_user_Pok.set_medicine_bag(3);
     player_user_Pok.add_medicine(1, medicine("Panadol", 25));
@@ -106,6 +110,11 @@ int main(){
         //initiate pokemon and assign it to enemy and display its information
         Pokemon enemy_Pok = Pokemon(Pok_ID);
         Enemy enemy_user_Pok = Enemy(enemy_Pok);
+
+        enemy_user_Pok.set_name(enemy_Pok);
+        enemy_Pok.HP = enemy_user_Pok.HP;
+        enemy_Pok.name = enemy_user_Pok.name;
+        
         cout << "The new enemy pokemon information is below:" << endl;
         enemy_Pok.print_Pokemon_info(Pok_ID);
 
