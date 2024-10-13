@@ -111,6 +111,10 @@ void Pokemon::inc_num_hits(int x) {
     num_hits = x;
 }
 
+void Pokemon::set_num_hits(int y) {
+    num_hits = y;
+}
+
 int Pokemon::get_Pokemon_HP() {
     return HP;
 }
