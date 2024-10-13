@@ -103,7 +103,7 @@ void Enemy::set_name(Pokemon pok){
     }
     else if (enemy_choice == 3){
         name = "Sachin";
-        HP = HP + 40;
+        HP = 40;
     }
     else if (enemy_choice == 0) {
         break;
