@@ -154,3 +154,10 @@ void Pokemon::HP_drain(int damage) {
     HP = 0;
     }
 }
+
+void Pokemon::set_name() {
+    cout << "What's your name: ";
+    cin >> name;
+    cout << "The name of your pokemon will be reset to: " << name << endl;
+}
+
