@@ -28,6 +28,7 @@ class Pokemon {
 
         int get_num_hits();
         void inc_num_hits(int x);
+        void set_num_hits(int y);
 
         void print_Pokemon_info(int PokemonID);
 
