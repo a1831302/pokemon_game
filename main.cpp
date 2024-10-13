@@ -217,12 +217,15 @@ int main(){
         if (attack_choice == 3) {
             SigAttack sigattack1 = SigAttack(player_Pok.get_num_hits(), player_Pok);
 
-            player_Pok.set_num_hits(0);
+
             //multiplier function
             sigattack1.damage = multiplier * sigattack1.damage;
                 
             enemy_Pok.HP_drain(sigattack1.damage);
             if (sigattack1.damage > 0) {
+            int new_hits;
+            new_hits = player_Pok.get_num_hits() - 5;
+            player_Pok.set_num_hits(new_hits);
             cout << "You attacked the enemy with " << sigattack1.damage << " damage." << endl;
             }
         }
@@ -250,6 +253,9 @@ int main(){
             cout << "The enemy attacked you with " << typeattack2.damage << " damage." << endl;
         }
 
+        cout << "Enter any key to continue - note the information above will be cleared: ";
+        string conti;
+        cin >> conti;
         system("clear");
             
         //if player has lost
