@@ -1,5 +1,6 @@
 
 
+
 #include "Pokemon.h"
 #include "Player.h"
 #include "Enemy.h"
@@ -213,7 +214,7 @@ int main(){
 
             player_Pok.set_num_hits(0);
             //multiplier function
-            sigattack1.damage = multiplier * sigaattack1.damage;
+            sigattack1.damage = multiplier * sigattack1.damage;
                 
             enemy_Pok.HP_drain(sigattack1.damage);
             if (sigattack1.damage > 0) {
@@ -317,20 +318,3 @@ int main(){
 return 0;
 }
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
