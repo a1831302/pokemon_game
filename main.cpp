@@ -176,6 +176,14 @@ int main(){
                 player_Pok.inc_num_hits(player_Pok.get_num_hits());
             }
 
+            //multiplier function
+            Multiplier multQ = Multiplier();
+
+            double qmultiplier;
+            qmultiplier = multQ.find_mult(player_Pok, enemy_Pok);
+
+            quickattack1.damage = qmultiplier * quickattack1.damage;
+
             enemy_Pok.HP_drain(quickattack1.damage);
         }
         
@@ -187,6 +195,12 @@ int main(){
                 player_Pok.inc_num_hits(player_Pok.get_num_hits());
             }
             //multiplier function
+            Multiplier multT = Multiplier();
+
+            double tmultiplier;
+            tmultiplier = multT.find_mult(player_Pok, enemy_Pok);
+
+            quickattack1.damage = tmultiplier * quickattack1.damage;
                 
             enemy_Pok.HP_drain(typeattack1.damage);
 
