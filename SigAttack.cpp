@@ -15,10 +15,10 @@ SigAttack::SigAttack() {
 
 SigAttack::SigAttack(int num_hits, Pokemon pok) {
     
-        if (pok.num_hits > 4){ //5 hits
+        if (num_hits > 4){                 //5 hits
             attack_type = pok.pokemon_type; // pokemon type
             damage = 70;
-            pok.num_hits = pok.num_hits - 5;
+            pok.set_num_hits(0);
             cout << pok.name << " used signature attack!" << endl;
         } else {
             cout << "Signature is not ready. Try Again: " << endl;
