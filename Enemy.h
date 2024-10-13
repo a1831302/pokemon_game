@@ -28,17 +28,17 @@ class Enemy : public Pokemon {
         void set_pokemon(Pokemon new_enemy_Pokemon);   // used to set the pokemon the opponent has
         
         Pokemon get_pokemon();   // used to get the pokemon the opponent has
-        void set_name();     //enemy implementation of Pokemon virtual naming function
+        void set_name(Pokemon enemy_Pokemon);     //enemy implementation of Pokemon virtual naming function
 
-        void print_enemy_info();   // Prints enemy's Pokemon info (name, HP, etc.)
-        void print_enemy_strengths_weaknesses();   // Prints strengths and weaknesses
+        //void print_enemy_info();   // Prints enemy's Pokemon info (name, HP, etc.)
+        //void print_enemy_strengths_weaknesses();   // Prints strengths and weaknesses
 
         // Getter methods
-        int get_enemy_HP();
-        int get_enemy_type();
-        string get_enemy_name();
+        //int get_enemy_HP();
+        //int get_enemy_type();
+        //string get_enemy_name();
 
-        int get_enemy_ID() ;
+        //int get_enemy_ID() ;
 };
 
 #endif //ENEMY_H
