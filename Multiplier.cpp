@@ -6,7 +6,9 @@
 using namespace std;
 
 // Default constructor
-Multiplier::Multiplier() {}
+Multiplier::Multiplier() {
+    multiplier = 1;
+}
 
 double Multiplier::find_mult(Pokemon pok1, Pokemon pok2) {
       multiplier = 1; // Default multiplier
@@ -26,7 +28,7 @@ double Multiplier::find_mult(Pokemon pok1, Pokemon pok2) {
 
     // Check if the attack type matches any of the weaknesses (deal more damage)
     for (int i = 0; i < 2; ++i) {
-        if (weaknesses[i] != 0 && pokemon_type == weaknesses[i]) {
+        if (weaknesses[i] != 0 && pok1.pokemon_type == weaknesses[i]) {
             multiplier = 2;  // More damage for weaknesses
             cout << "The attack type matches a weakness. Multiplier is set to 2" << endl;
             return multiplier;  // Exit the loop since we found a match
