@@ -86,7 +86,14 @@ int main(){
     Pokemon player_Pok = Pokemon(chosen_ID);
     Player player_user_Pok = Player(player_Pok);
 
+    
     player_user_Pok.set_name(); //base class Pokemon implementation of naming function (virtual)
+    while (player_user_Pok.name == "0") {
+        system("clear");
+        cout << "Game exited. " << endl;
+        return 0;
+    }
+
     player_Pok.name = player_user_Pok.name;
     
 
@@ -111,7 +118,13 @@ int main(){
         Pokemon enemy_Pok = Pokemon(Pok_ID);
         Enemy enemy_user_Pok = Enemy(enemy_Pok);
 
+
         enemy_user_Pok.set_name(enemy_Pok);
+        if(enemy_user_Pok.name == "0") {
+            system("clear");
+            cout << "Game exited. " << endl;
+            return 0;  
+        }
         enemy_Pok.HP = enemy_user_Pok.HP + enemy_Pok.HP; // add 0, 20 or 40 to current enemy HP based on choice
         enemy_Pok.name = enemy_user_Pok.name;
         
