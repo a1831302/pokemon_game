@@ -1,5 +1,4 @@
-//commenting for game file
-//player1 = player_user_pok, user_robot = player_pok
+
 
 #include "Pokemon.h"
 #include "Player.h"
