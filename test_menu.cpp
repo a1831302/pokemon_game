@@ -3,7 +3,6 @@
 
 // Platform specific includes
 #ifdef _WIN32
-#include <conio.h>  // For _getch() on Windows
 #else
 #include <termios.h>
 #include <unistd.h>
@@ -24,7 +23,7 @@ int _getch() {
 #endif
 
 // Menu options
-std::string mainMenu[] = {"Run", "Battle", "Heal"};
+std::string mainMenu[] = {"Exit", "Battle", "Heal"};
 std::string battleMenu[] = {"Signature", "Type", "Quick Attack"};
 std::string healMenu[] = {"Fentanyl", "Codeine", "Panadol"};
 
