@@ -3,7 +3,6 @@
 
 // Platform specific includes
 #ifdef _WIN32
-#include <conio.h>  // For _getch() on Windows
 #else
 #include <termios.h>
 #include <unistd.h>

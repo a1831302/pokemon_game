@@ -23,11 +23,6 @@ public:
     //returns value (chance) between 1 and 100 to use for quick and type attacks
     static int success_rate();
 
-
-    //int set_numHits(int num_hits);
-    //int get_numHits();
-
-
 };
 
 #endif

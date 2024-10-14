@@ -8,8 +8,8 @@ using namespace std;
 
 class medicine {
     protected:
-    string name;
-    int healing;
+    string name; //hi, low, med
+    int healing; //amount
     public:
     medicine(string name, int healing);
     medicine();

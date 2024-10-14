@@ -19,7 +19,7 @@ SigAttack::SigAttack(int num_hits, Pokemon pok) {
             attack_type = pok.pokemon_type; // pokemon type
             damage = 70;
             pok.set_num_hits(0);
-            cout << pok.name << " used signature attack!" << endl;
+            cout << pok.name << " used "<< pok.sig_attack << " attack!" << endl;
         } else {
             cout << "Signature is not ready. You have lost your turn. " << endl;
             damage = 0;

@@ -7,11 +7,9 @@
 
 using namespace std;
 
-
-// Default Constructor with randomized PokemonID
 Enemy::Enemy() : Pokemon() {
-    enemy_name = this->name;  // Use inherited 'name' from Pokemon
-    enemy_HP = this->HP;      // Use inherited 'HP' from Pokemon
+    enemy_name = this->name;  //use inherited name from pokemon
+    enemy_HP = this->HP;      //use inherited HP from pokemon
     enemy_type = this->pokemon_type;  // Use inherited 'pokemon_type' from Pokemon
     enemy_attack = this->attack;
     enemy_sig = this->sig_attack;
@@ -22,58 +20,44 @@ Enemy::Enemy() : Pokemon() {
     enemy_weaknessess[1] = this->weaknesses[1];
 }
 
-
 //constructor with pokemon argument
 Enemy::Enemy(Pokemon enemy_Pok) {
     enemy_pokemon = enemy_Pok;
 }
 
-// Method to print enemy's Pokemon information
-/*
-void Enemy::print_enemy_info(enemy_Pokemon) {
-    cout << "Enemy Pokemon: " << enemy_Pokemon.name << endl;
-    cout << "HP: " << enemy_Pokemon.HP << endl;
-    //cout << "Attack: " << enemy_Pokemon.attack << endl;
-    cout << "Signature Move: " << enemy_Pokemon.sig_attack << endl;
-    cout << "Type: " << enemy_Pokemon.getTypeName() << endl;
-}
-*/
-// Method to print strengths and weaknesses
 
+//print strengths and weaknesses
 void Enemy::print_enemy_strengths_weaknesses() {
     cout << "Strengths: " << this->stringStrengths << endl;
     cout << "Weaknesses: " << this->stringWeaknesses << endl;
 }
 
 
-// Getter for enemy HP
+//Get enemy HP
 int Enemy::get_enemy_HP() {
     return enemy_HP;
 }
 
-// Getter for enemy type
+//get enemy type
 int Enemy::get_enemy_type() {
     return enemy_type;
 }
 
-// Getter for enemy name
+//get enemy name
 string Enemy::get_enemy_name() {
     return enemy_name;
 }
 
-// Function to generate random PokemonID
+// generate random pokemon
 int Enemy::get_enemy_ID() {
-    // Initialize a random number engine
+    //rng
     std::random_device dev;  
     std::mt19937 rng(dev()); 
-
-    // Define the distribution range (e.g., between 1 and 100)
+    // 1 to 8 as 8 pokemon to choose from
     std::uniform_int_distribution<std::mt19937::result_type> dist(1, 8);
-
-    // Generate a random number
     int enemyID = dist(rng);
 
-    return enemyID; // Generate random PokemonID
+    return enemyID;
 }
 
 void Enemy::set_pokemon(Pokemon new_enemy_pokemon){enemy_pokemon = new_enemy_pokemon;}
@@ -112,6 +96,7 @@ void Enemy::set_name(Pokemon pok){
     else {
         cout << "Error - please pick 1, 2 or 3: ";
     }
+    system("clear");
 }
 //check if enemy choice is 0 in main file, and can exit game then
 }

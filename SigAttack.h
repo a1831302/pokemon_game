@@ -13,10 +13,6 @@ public:
     //constructors
     SigAttack();
     SigAttack(int num_hits, Pokemon pok);
-
-    
-
-
 };
 
 #endif

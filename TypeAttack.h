@@ -13,9 +13,6 @@ public:
     //constructor
     TypeAttack();
     TypeAttack(int chance, Pokemon pok);
-    
-
-
 };
 
 #endif

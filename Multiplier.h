@@ -13,8 +13,6 @@ public:
     double multiplier;
     
     Multiplier() ;
-    
-    //Multiplier(Pokemon pok1, Pokemon pok2);
 
     double find_mult(Pokemon pok1, Pokemon pok2);
 };

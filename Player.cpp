@@ -60,10 +60,3 @@ medicine* Player::get_medicine_bag_pointer(){return medicine_bag;}
 
 // returns medicine_count
 int Player::get_medicine_count(){return medicine_count;}
-
-// player implementation.
-//void Player::set_name(){
-  //  cout << "What's your name?" << endl;   // asks the player for their name
-    //cin >> name;
-    //cout << "Thanks! \n";
-//}

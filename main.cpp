@@ -21,14 +21,16 @@ using namespace std;
 
 int main(){
     
+    system("clear");
     //game intro
     cout << "Welcome to Pokemon Battles!"<<"\n";
     cout << "The aim of the game is to defeat as many pokemons as you can." << "\n";
-    cout << "Your chosen Pokemon will have  HP, strengths and weaknesses." << "\n" ;
+    cout << "Your chosen Pokemon will have  HP, strengths and weaknesses." << "\n\n" ;
     cout << "HP is how much health your pokemon still has. There are 3 types of attack: quick attack deals 10 damage with 80% success rate, \n";
     cout << "type attack deals 30 damage with 50% success rate, and the signature attack deals 70 damage, but requires \n";
-    cout << "you to have had 5 successful attacks. \n";
+    cout << "you to have had 5 successful attacks. \n\n";
     cout << "As each Pokemon has a type, the damage to the opponent will be doubled if it is a strength, and halved if it is a weakness of the enemy's. \n";
+    cout << "Only type attack and signature move will be the same type as the pokemon, hence, quick attack will have no multiplier. \n\n";
     cout << "There also medicines availible to increase your HP, and can be utilised instead of an attack. \n";
     cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n \n \n";
 
@@ -111,7 +113,6 @@ int main(){
 
     while(player_Pok.get_Pokemon_HP() > 0) { 
         //rng to get random pokemon ID Pok_ID
-        
         int Pok_ID = Random::rand(1,8);
         
         //initiate pokemon and assign it to enemy and display its information
@@ -138,17 +139,16 @@ int main(){
         double multiplier;
         multiplier = mult.find_mult(player_Pok, enemy_Pok);
 
-
         
         while (enemy_Pok.get_Pokemon_HP() > 0){
-        cout << "Currently, your HP is: " << player_Pok.get_Pokemon_HP() << "\nThe Enemy's HP is: " << enemy_Pok.get_Pokemon_HP() << endl;
+        cout << "Your HP: " << player_Pok.get_Pokemon_HP() << "\nEnemy HP: " << enemy_Pok.get_Pokemon_HP() << endl;
         //ask user if they would like to use a medicine or attack
         //either 1 or 2 or do it like highlighted text etc
         int choice = 0;;
 
         while(choice != 1 && choice != 2){
         if(player_user_Pok.get_medicine_count() == 0){
-            cout << "You currently have no medicines in your inventory, so you must attack." << endl;
+            cout << "You have no medicines in your inventory, you must attack." << endl;
             choice = 1;
         } 
         else {
@@ -166,12 +166,14 @@ int main(){
         cout << "Invalid input.  Try again: ";
 
         }
+        system("clear");
         }
 
     //choose medicine
         if (choice == 2){
             int medicine_choice = 0;
-            cout << "You have " << player_user_Pok.get_medicine_count() << " medicines. Enter a number to choose which medicine you would like to use:" << endl;
+            system("clear");
+            cout << "You have " << player_user_Pok.get_medicine_count() << " medicines. Which medicine you would like to use:" << endl;
             for (int i = 0; i <= (player_user_Pok.get_medicine_count() - 1); i++){
                 cout << (i + 1) << " - " << (*(player_user_Pok.get_medicine_bag_pointer() + i)).getMedicineName() << endl;
             }
@@ -204,14 +206,15 @@ int main(){
 
     //chosen attack
     if (choice == 1) {
+        system("clear");
         int attack_choice = 4;   
         cout << "Pick an attack: " << endl;
         if (num_attacks == 0) {
-        cout << "Quick attack does 10 damage (80% success rate), Type attack does 30 damage (50% success rate), and can be multiplied. " << endl;
-        cout << "Signature attack does 70 damage, but requires five successful previous attacks. " << endl;
+        cout << "Quick attack, Type attack or" << endl;
+        cout << "Signature attack " << endl;
         num_attacks++;
         }
-        cout << "Currently, you have " << player_Pok.get_num_hits() << " previous attacks. " << endl;
+        cout << "You have " << player_Pok.get_num_hits() << " successful attacks. " << endl;
         cout << "Quick Attack(1), Type Attack(2), Signature Attack(3)" << endl;
         
 
@@ -254,7 +257,7 @@ int main(){
             enemy_Pok.HP_drain(quickattack1.damage);
             cout << "You attacked the enemy with " << quickattack1.damage << " damage." << endl;
         }
-        
+
         //type attack
         if (attack_choice == 2) {
             TypeAttack typeattack1 = TypeAttack(chance, player_Pok);
@@ -270,7 +273,7 @@ int main(){
             cout << "You attacked the enemy with " << typeattack1.damage << " damage." << endl;
 
         }
-        
+
         //sig attack
         if (attack_choice == 3) {
             SigAttack sigattack1 = SigAttack(player_Pok.get_num_hits(), player_Pok);
@@ -287,7 +290,6 @@ int main(){
             cout << "You attacked the enemy with " << sigattack1.damage << " damage." << endl;
             }
         }
-
         
         } //end attack section
 
@@ -318,7 +320,7 @@ int main(){
             cout << "Game exited. " << endl;
             return 0;
         }
-        system("clear");
+
             
         //if player has lost
         if (player_Pok.get_Pokemon_HP() <= 0) {
@@ -338,23 +340,22 @@ int main(){
 
     cout << "You lose! You beat " << num_wins << " enemies. " << endl;
 
-    //save number of enemies beaten to text file - DO WE NEED ALL OF THIS BELOW?
 
+
+    //save number of enemies beaten to text file 
     //read section
-
     ifstream scoreIn("score.txt");
-
     if (!scoreIn) {
         cerr << "Error: Unable to open file " << endl;
         return 0;
     }
+
     string line;
     int previousBest;
 
     if (scoreIn.is_open()) {
         // skip first line 
         getline(scoreIn, line);
-        
         //skip line 2        
         getline(scoreIn, line);
 
@@ -367,7 +368,6 @@ int main(){
     }
 
     //write section
-
     ofstream scoreOut("score.txt");
     //update
     if (num_wins > previousBest) {
@@ -379,16 +379,13 @@ int main(){
         cerr << "Error: Unable to open file " << endl;
         return 0;
     }
-    
-    
+
     if (scoreOut.is_open()) {
         scoreOut << "You have now lost!!" << endl;
         scoreOut << "You scored: " << num_wins << endl;
         scoreOut << "Your previous best is: " << previousBest << endl;
         scoreOut.close();
     }
-    
-
 return 0;
 }
         

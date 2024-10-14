@@ -28,8 +28,7 @@ class Player : public Pokemon {
         void remove_medicine(int medicine_number);   // removes a medicine from the potion bag
         medicine* get_medicine_bag_pointer();   // returns medicine_bag
         int get_medicine_count();   // returns medicine count
-        
-        //void set_name();   
+
 };
 
 #endif //PLAYER_H

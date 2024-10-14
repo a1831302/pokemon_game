@@ -18,7 +18,7 @@ QuickAttack::QuickAttack(int chance, Pokemon pok) {
             damage = 10;
             pok.inc_num_hits(pok.get_num_hits());
         } else {
-            cout << pok.name << "'s quick attack missed!" << endl;
+            cout << pok.name << "'s attack missed!" << endl;
             damage = 0;
         }
 }
