@@ -10,6 +10,7 @@
 #include "Multiplier.h"
 #include "Random.h"
 
+#include <opencv2/opencv.hpp>  // need this: sudo apt-get update, sudo apt-get install libopencv-dev
 
 #include <limits>
 #include <algorithm>
@@ -338,8 +339,13 @@ int main(){
         
     } //end player while loop
 
-
-    //player has lost as exited while loop
+    //load image
+    cv::Mat image = cv::imread("temp.jpg");
+    //create window
+    cv::namedWindow("YOU SUCK!!!");
+    // show the image in the window
+    cv::imshow("YOU SUCK!!!", image);
+    cv::waitKey(0);
 
     cout << "You lose! You beat " << num_wins << " enemies. " << endl;
 
