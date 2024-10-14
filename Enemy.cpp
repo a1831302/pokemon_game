@@ -70,7 +70,7 @@ Pokemon Enemy::get_pokemon(){
 //  enemy implementation of the Battler classes pure virtual function
 void Enemy::set_name(Pokemon pok){
     string enemy_choice = "";
-    cout << "Which Enemy do you want to verse first? Seb has an extra 20 HP for his first pokemon, and Sachin has an extra 40. " << endl;
+    cout << "Which Enemy do you want to verse? Seb has an extra 20 HP for his first pokemon, and Sachin has an extra 40. " << endl;
     cout << "1 - Kevin (easy)" << endl;
     cout << "2 - Seb (medium)" << endl;
     cout << "3 - Sachin (hard)" << endl;
