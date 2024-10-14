@@ -8,6 +8,8 @@
 #include <unistd.h>
 #include <stdio.h>
 
+using namespace std;
+
 // Function to simulate getch()
 int _getch() {
     struct termios oldt, newt;
@@ -27,9 +29,9 @@ std::string mainMenu[] = {"Exit", "Battle", "Heal"};
 std::string battleMenu[] = {"Signature", "Type", "Quick Attack"};
 std::string healMenu[] = {"Fentanyl", "Codeine", "Panadol"};
 
-int mainMenuSize = sizeof(mainMenu) / sizeof(mainMenu[0]);
-int battleMenuSize = sizeof(battleMenu) / sizeof(battleMenu[0]);
-int healMenuSize = sizeof(healMenu) / sizeof(healMenu[0]);
+int mainMenuSize = 3;
+int battleMenuSize = 3;
+int healMenuSize = 3;
 
 // Function to display a menu and get the selected option
 int displayMenu(std::string menu[], int menuSize) {
@@ -43,11 +45,11 @@ int displayMenu(std::string menu[], int menuSize) {
         
         for (int i = 0; i < menuSize; i++) {
             if (i == highlight)
-                std::cout << "> "; // Highlight current selection
+                cout << "> "; // Highlight current selection
             else
-                std::cout << "  ";
+                cout << "  ";
             
-            std::cout << menu[i] << std::endl;
+            cout << menu[i] << endl;
         }
 
         c = _getch();  // Get user input
@@ -73,21 +75,21 @@ int main() {
     while (1) {
         int mainChoice = displayMenu(mainMenu, mainMenuSize);
         
-        if (mainMenu[mainChoice] == "Run") {
+        if (mainMenu[mainChoice] == "Exit") {
             system("clear || cls");
-            std::cout << "You chose to Run. Exiting..." << std::endl;
+            cout << "You chose to Run. Exiting..." << endl;
             break;
         } else if (mainMenu[mainChoice] == "Battle") {
             int battleChoice = displayMenu(battleMenu, battleMenuSize);
             system("clear || cls");
-            std::cout << "You selected: " << battleMenu[battleChoice] << std::endl;
-            std::cout << "Press any key to continue..." << std::endl;
+            cout << "You selected: " << battleMenu[battleChoice] << endl;
+            cout << "Press any key to continue..." << endl;
             _getch();  // Wait for user input
         } else if (mainMenu[mainChoice] == "Heal") {
             int healChoice = displayMenu(healMenu, healMenuSize);
             system("clear || cls");
-            std::cout << "You selected: " << healMenu[healChoice] << std::endl;
-            std::cout << "Press any key to continue..." << std::endl;
+            cout << "You selected: " << healMenu[healChoice] << endl;
+            cout << "Press any key to continue..." << endl;
             _getch();  // Wait for user input
         }
     }

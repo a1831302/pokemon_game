@@ -18,7 +18,79 @@
 #include <string>
 #include <fstream>
 
+// Platform specific includes
+#ifdef _WIN32
+#else
+#include <termios.h>
+#include <unistd.h>
+#include <stdio.h>
 
+using namespace std;
+
+// Function to simulate getch()
+int _getch() {
+    struct termios oldt, newt;
+    int ch;
+    tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
+    newt.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+    ch = getchar();
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+    return ch;
+}
+#endif
+
+// Menu options
+std::string pokemonMenu[] = {"Squirtle", "Bulbasaur", "Charmander", "Quit Game"};
+std::string mainMenu[] = {"Battle", "Heal", "Quit Game"};
+std::string battleMenu[] = {"Signature", "Type Attack", "Quick Attack"};
+std::string healMenu[] = {"Morphine", "Codeine", "Panadol"};
+std::string confirmMenu[]={"Confirm this Pokemon", "Choose different Pokemon"};
+
+int confirmSize = 2;
+int pokemonMenuSize = 4;
+int mainMenuSize = 4;
+int battleMenuSize = 3;
+int healMenuSize = 3;
+
+// Function to display a menu and get the selected option
+int displayMenu(std::string menu[], int menuSize) {
+    int highlight = 0;
+    int choice = 0;
+    char c;
+
+    // Print menu
+    while (1) {
+        system("clear || cls"); // Clear console screen (cross-platform)
+        
+        for (int i = 0; i < menuSize; i++) {
+            if (i == highlight)
+                cout << "> "; // Highlight current selection
+            else
+                cout << "  ";
+            
+            cout << menu[i] << endl;
+        }
+
+        c = _getch();  // Get user input
+        
+        if (c == 27) {  // Check for arrow keys (esc sequence starts with 27)
+            _getch();    
+            switch (_getch()) {
+                case 'A':
+                    highlight = (highlight == 0) ? menuSize - 1 : highlight - 1;
+                    break;
+                case 'B':
+                    highlight = (highlight == menuSize - 1) ? 0 : highlight + 1;
+                    break;
+            }
+        } else if (c == 10 || c == 13) { // Enter key
+            choice = highlight;
+            return choice;
+        }
+    }
+}
 
 using namespace std;
 
@@ -37,56 +109,58 @@ int main(){
     cout << "There also medicines availible to increase your HP, and can be utilised instead of an attack. \n";
     cout << "At any point requiring an input in the game, you can enter 0, to exit the game. \n \n \n";
 
-    cout << "Enter any key (except 0) to continue - note the information above will be cleared. ";
-    string cont;
-    cin >> cont;
+    cout << "Enter any key to continue - note the information above will be cleared. ";
+    _getch();
+
     system("clear");
-    if (cont == "0") {
-        system("clear");
-        cout << "Game exited. " << endl;
-        return 0;
-    }
-    
 
     //number of enemies beaten
     int num_wins = 0;
 
     //display first three available Pokemon stats, and get user to select from them and store in chosen_ID
     //initialise first 3 pokemon to print their info. -this has been tested, and it works.
+
     Pokemon Pok1 = Pokemon(1);
     Pokemon Pok2 = Pokemon(2);
     Pokemon Pok3 = Pokemon(3);
-    cout << "Pokemon ID: 1 \n";
-    Pok1.print_Pokemon_info(1);
-    cout << "Pokemon ID: 2 \n";
-    Pok2.print_Pokemon_info(2);
-    cout << "Pokemon ID: 3 \n";
-    Pok3.print_Pokemon_info(3);
 
-    
-
-    //get player to choose ID
+    cout<< "Time to choose your pokemon!"<<endl;
+    _getch();
     int chosen_ID = 0;
-    cout << "Which pokemon would you like - input their ID: ";
-    cin >> chosen_ID;
-    cout << endl;
-    if (chosen_ID == 0) {
-        system("clear");
-        cout << "Game exited. " << endl;
-        return 0;
-    }
-    while (chosen_ID != 1 && chosen_ID != 2 && chosen_ID != 3) {
-        cout << "Invalid input, try again: ";
-        cin >> chosen_ID;
-        if (chosen_ID == 0) {
-            system("clear");
-            cout << "Game exited. " << endl;
+    while(chosen_ID == 0){
+        int pokChoice = displayMenu(pokemonMenu, pokemonMenuSize);
+        if ( pokemonMenu[pokChoice] == "Squirtle") {
+            system("clear || cls");
+            Pok1.print_Pokemon_info(1);
+            cout<<"\n Do you confirm this pokemon choice? \n";
+            _getch();
+            int confirm = displayMenu(confirmMenu, confirmSize);
+            if (confirmMenu[confirm] == "Confirm this Pokemon"){
+                chosen_ID = 1;
+            }
+
+        } else if (pokemonMenu[pokChoice] == "Bulbasaur") {
+            system("clear || cls");
+            Pok2.print_Pokemon_info(2);
+            cout<<"\n Do you confirm this pokemon choice? \n";
+            _getch();
+            int confirm = displayMenu(confirmMenu, confirmSize);
+            if (confirmMenu[confirm] == "Confirm this Pokemon"){
+                chosen_ID = 2;
+            }
+        } else if (pokemonMenu[pokChoice] == "Charmander") {
+            system("clear || cls");
+            Pok3.print_Pokemon_info(3);
+            cout<<"\n Do you confirm this pokemon choice? \n";
+            _getch();
+            int confirm = displayMenu(confirmMenu, confirmSize);
+            if (confirmMenu[confirm] == "Confirm this Pokemon"){
+                chosen_ID = 3;
+            }
+        } else if (pokemonMenu[pokChoice] == "Quit Game"){
             return 0;
         }
     }
-
-    system("clear");
-
     //initiate chosen pokemon and assign it to player
     Pokemon player_Pok = Pokemon(chosen_ID);
     Player player_user_Pok = Player(player_Pok);
