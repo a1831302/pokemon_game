@@ -115,6 +115,7 @@ int main(){
         //rng to get random pokemon ID Pok_ID
         int Pok_ID = Random::rand(1,8);
         
+        
         //initiate pokemon and assign it to enemy and display its information
         Pokemon enemy_Pok = Pokemon(Pok_ID);
         Enemy enemy_user_Pok = Enemy(enemy_Pok);
