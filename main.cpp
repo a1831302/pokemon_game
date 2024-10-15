@@ -10,7 +10,7 @@
 #include "Multiplier.h"
 #include "Random.h"
 
-//#include <opencv2/opencv.hpp>  // need this: sudo apt-get update, sudo apt-get install libopencv-dev
+#include <opencv2/opencv.hpp>  // need this: sudo apt-get update sudo apt-get install libopencv-dev
 
 #include <limits>
 #include <algorithm>
@@ -365,7 +365,7 @@ int main(){
         }//end enemy while loop
         
     } //end player while loop
-    /*
+    
     //load image
     cv::Mat image = cv::imread("temp.jpg");
     //create window
@@ -373,7 +373,7 @@ int main(){
     // show the image in the window
     cv::imshow("YOU SUCK!!!", image);
     cv::waitKey(0);
-    */
+    
 
     cout << "You lose! You beat " << num_wins << " enemies. " << endl;
     //save number of enemies beaten to text file 
