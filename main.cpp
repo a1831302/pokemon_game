@@ -10,7 +10,7 @@
 #include "Multiplier.h"
 #include "Random.h"
 
-#include <opencv2/opencv.hpp>  // need this: sudo apt-get update sudo apt-get install libopencv-dev
+#include <opencv2/opencv.hpp>  // need this: sudo apt update sudo apt install libopencv-dev
 
 #include <limits>
 #include <algorithm>
